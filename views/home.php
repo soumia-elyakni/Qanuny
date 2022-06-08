@@ -8,7 +8,7 @@
      <title>Al-Qanuny</title>
  </head>
  <body style="direction: rtl ;" >
- <div class="back-img">.....</div>
+ <div class="back-img"></div>
 
  <main style="margin-top: 100px !important ;">
         <section class="align-items-center p-sm-2 p-5 border-bottom border-white-2 mx-5 mt-5">
