@@ -1,5 +1,5 @@
 
-<div class="bg-light d-flex mx-5 justify-content-between">
+<div class="bg-transparent mt-5 d-flex px-5 w-100 justify-content-between" style="direction: rtl ;">
  <p>Create by Soumia EL YAKNI 2022</p>
  <p><a href="./loginAdmin">Admin</a></p>
 </div>
