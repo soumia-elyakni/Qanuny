@@ -1,0 +1,7 @@
+Options All -Indexes
+
+RewriteEngine On
+
+RewriteBase /Al-Qanuny/
+
+RewriteRule ^([-a-zA-Z0-9]+)$ Index.php?page=$1
