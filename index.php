@@ -1,6 +1,7 @@
 <?php
    
    require_once 'autoload.php';
+   require_once 'views/includes/navbar.php';
 
     $home = new HomeController();
 

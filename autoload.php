@@ -3,9 +3,9 @@ session_start();
 
 spl_autoload_register('autoload');
 
-require_once './views/includes/header.php';
+require_once './views/includes/head.php';
 // require_once './views/includes/sidebarAdmin.php';
-require_once './autoload.php';
+
 require_once './controllers/HomeController.php';
 
 function autoload($class_name)
@@ -28,6 +28,5 @@ function autoload($class_name)
         }
     }
 }
-
 
 ?>
