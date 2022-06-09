@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="public/css/navbar.css">
+<link rel="stylesheet" href="../public/css/navbar.css">
 <header style="direction : rtl;">
      
       <nav class="navbar rtl navbar navbar-expand-lg fixed-top">
@@ -191,5 +191,5 @@
         </div>
   </div>
     
-      <script src="public/js/navbar.js"></script>
+      <script src="../public/js/navbar.js"></script>
       </body>
