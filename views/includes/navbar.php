@@ -3,7 +3,7 @@
      
       <nav class="navbar rtl navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">القانوني</a>
+          <a class="navbar-brand" href="home">القانوني</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="iconify" data-icon="octicon:law-24"></span>
           </button>
