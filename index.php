@@ -12,7 +12,7 @@
             $page= $_GET['page'];
             $home->index($page);
         }else{
-            include('views/includes/404.php');
+            include('views/404.php');
         }
     }else{
         $home->index('home');
