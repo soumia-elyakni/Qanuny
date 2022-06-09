@@ -42,9 +42,10 @@
                         <input type="text" placeholder="اسم المستخدم" class="mb-5 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;"></br>
 
                         <input type="text" placeholder="كلمة السر" class="mb-2 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;"></br>
+                        <a href="#" class="" style="font-size: 13px ;">هل نسيت كلمة السر؟</a>
                         <div class="form-check form-switch w-25">
-                          <label class="form-check-label text-dark" for="flexSwitchCheckDefault">تذكرني</label>
                           <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                          <label class="form-check-label text-dark " for="flexSwitchCheckDefault">تذكرني</label>
                         </div>
 
                    </form>
