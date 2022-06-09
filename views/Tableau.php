@@ -5,20 +5,11 @@ $users =$data-> getAllUsers();
 // print_r($users);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>listeUsers</title>
-</head>
-<body class="m-0 p-0 w-100 h-100 bg-light">
 <main>
                 <!--avanttable-->
 
-      <section class="nav_bar d-flex align-items-center px-3 bg-light" style=" margin-top : 50px;">
-            <h2 class="tabtitle col-9 align-self-center mt-1"> Liste des utilisateurs</h2> 
+      <section class="nav_bar d-flex align-items-center px-3" style=" margin-top : 100px;">
+            <h2 class="tabtitle col-12 align-self-center mt-1 text-center mb-3"> Liste des utilisateurs</h2> 
             <div class="col-3 align-self-center d-flex">
               <button style="border: transparent; background: transparent; align-self: center;"> 
                  <img src="">
@@ -57,7 +48,14 @@ $users =$data-> getAllUsers();
                                 <td scope="col"><?= $user['mail']?></td>
                                 <td scope="col"><?= $user['role']?></td>
                                 <td scope="col"><?= $user['ville']?></td>
-                                <td scope="col" colspan="2"></td>
+                                <td scope="col" colspan="2">
+                                        <form method="post" class="mr-1" action="deleteUser">
+                                            <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+                                            <button type="submit" name="delete" class="border border-0">
+                                                <i class="far fa-trash text-danger"></i>
+                                            </button>
+                                        </form>
+                                </td>
                               </tr>
                               <?php endforeach;?>
                             </tbody>
