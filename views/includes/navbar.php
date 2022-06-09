@@ -1,7 +1,7 @@
-
+<link rel="stylesheet" href="public/css/navbar.css">
 <header style="direction : rtl;">
      
-      <nav class="rtl navbar navbar-expand-lg bg-transparent fixed-top">
+      <nav class="navbar rtl navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">القانوني</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@
 
              <!-- / login modal -->
              <!-- iscription modal -->
-             <div class="modal fade" id="signin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+             <div class="modal fade" style="visibility : visible ;" id="signin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content p-4" style="direction : rtl;">
             <div class="modal-header">
@@ -67,15 +67,15 @@
             </div>
             <div class="modal-body justify-between m-auto">
     
-              <input type="text" placeholder="" name="nom" class="mb-4" id="nom">
+              <input type="text" placeholder="الاسم العائلي" name="nom" class="mb-4" id="nom">
     
-              <input type="text" placeholder="" name="prenom" class="mb-4" id="prenom">
+              <input type="text" placeholder="الاسم الشخصي" name="prenom" class="mb-4" id="prenom">
     
-              <input type="text" placeholder="" name="cin" class="mb-4" id="cin">
+              <input type="text" placeholder="رقم البطاقة الوطنية" name="cin" class="mb-4" id="cin">
     
-              <input type="tel" placeholder="" name="tel" class="mb-4" id="tel">
+              <input type="tel" placeholder="رقم الهاتف" name="tel" class="mb-4" id="tel">
     
-              <select name="role" class="" id="role" style="width : 190px">
+              <select name="role" class="select" id="role" style="width : 190px">
     
                     <option selected="selected" value="0">-اختر العمالة أو الإقليم-</option>
                     <option value="31">أكادير إدا وتنان</option>
@@ -174,11 +174,21 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">الغاء</button>
-              <button type="button" class="btn btn-primary">التالي</button>
+              <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#signin2" onclick="">
+                  التالي
+              </button>
+
+
+              
+
+           
+
+
+
             </div>
           </div>
         </div>
   </div>
     
-
+      <script src="public/js/navbar.js"></script>
       </body>
