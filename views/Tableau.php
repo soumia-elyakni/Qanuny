@@ -24,8 +24,8 @@ $users =$data-> getAllUsers();
           <div class="row">
               <div class="col-md-12 mx-auto">
                   <div class="card">
-                      <div class="card-body bg-light" >
-                          <table class="table table-responsive table-hover">
+                      <div class="card-body bg-light table-responsive" >
+                          <table class="table table-hover">
                             <thead class="text-muted" style="background: transparent;">
                               <tr>
                                 <td class="d-none"></td>
