@@ -1,16 +1,16 @@
 
-
-    <link rel="stylesheet" href="public/css/style.css">
     <title>Admin</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    
 </head>
 <body>
 <div class="back-img"></div>
-<div class="container-fluid w-50 position-absolute top-50  translate-middle mx-auto"  >
+<div class="container-fluid w-50 position-absolute top-50  translate-middle mx-auto" style="direction:rtl;"  >
         <div class="row">
             <div class="col-8 offset-2">
                 <div class="card shadow">
                     <div class="card-header bg-primary text-white">
-                        <h2>Login</h2>
+                        <h2>تسجيل الدخول</h2>
                     </div>
 
                     <div class="card-body">
@@ -18,18 +18,17 @@
                             <div class="form-group row">
                                 <label for="txtemail" class="col-form-label col-sm-2">اسم الادمن</label>
                                 <div class="col-sm-10">
-                                    <input type="email" name="txtemail" id="txtemail" class="form-control" required />
+                                    <input type="text" name="adminame" id="adminame" class="form-control" required />
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="txtpassword" class="col-form-label col-sm-2">كلمة السر</label>
                                 <div class="col-sm-10">
-                                    <input type="password" name="txtpassword" id="txtpassword" class="form-control"
-                                        required />
+                                    <input type="password" name="password" id="password" class="form-control" required />
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-primary btn-block">Login</button>
+                                <button class="btn btn-primary btn-block">الدخول</button>
                                 
                             </div>
                         </form>

@@ -1,15 +1,20 @@
 <?php
 
+
+
 $data = new UserControllers();
 $users =$data-> getAllUsers();
 // print_r($users);
 ?>
 
-<main>
+<?php
+include_once 'includes/sidebar.php';
+?>
+<main class="" style="position: absolute; z-index: 20; width: calc(100% - 270px); top: 62px; right : 270px;">
                 <!--avanttable-->
 
-      <section class="nav_bar d-flex align-items-center px-3" style=" margin-top : 100px;">
-            <h2 class="tabtitle col-12 align-self-center mt-1 text-center mb-3"> Liste des utilisateurs</h2> 
+      <section class="nav_bar d-flex align-items-center px-3" style=" margin-top : 40px; direction:ltr;">
+            <h2 class="tabtitle col-12 align-self-center mt-1 text-center mb-3">لائحة المستخدمين</h2> 
             <div class="col-3 align-self-center d-flex">
               <button style="border: transparent; background: transparent; align-self: center;"> 
                  <img src="">
@@ -20,7 +25,7 @@ $users =$data-> getAllUsers();
 
                    <!--table-->
           
-      <div class="container" style="direction:ltr;">
+      <div class="container " style="direction:rtl; margin-top: 100px;">
           <div class="row">
               <div class="col-md-12 mx-auto">
                   <div class="card">
@@ -29,13 +34,13 @@ $users =$data-> getAllUsers();
                             <thead class="text-muted" style="background: transparent;">
                               <tr>
                                 <td class="d-none"></td>
-                                <th scope="col">CIN</th>
-                                <th scope="col">Nom</th>
-                                <th scope="col">Prénom</th>
-                                <th scope="col">E-mail</th>
-                                <th scope="col">Rôle</th>
-                                <th scope="col">Ville</th>
-                                <th scope="col" colspan="2">Action</th>
+                                <th scope="col">ر.ب.و</th>
+                                <th scope="col">الاسم العائلي</th>
+                                <th scope="col">الاسم الشخصي</th>
+                                <th scope="col">البريد الالكتروني</th>
+                                <th scope="col">نوع الحساب</th>
+                                <th scope="col">المدينة</th>
+                                <th scope="col" colspan="2"></th>
                               </tr>
                             </thead>
                             <tbody>
@@ -65,4 +70,4 @@ $users =$data-> getAllUsers();
               </div>
           </div>
         </div>
-
+</main>

@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once 'bootstrap.php';
+
 spl_autoload_register('autoload');
 
 require_once './views/includes/head.php';
