@@ -17,7 +17,7 @@ $users =$data-> getAllUsers();
 <main>
                 <!--avanttable-->
 
-      <section class="nav_bar d-flex align-items-center px-3 bg-light">
+      <section class="nav_bar d-flex align-items-center px-3 bg-light" style=" margin-top : 50px;">
             <h2 class="tabtitle col-9 align-self-center mt-1"> Liste des utilisateurs</h2> 
             <div class="col-3 align-self-center d-flex">
               <button style="border: transparent; background: transparent; align-self: center;"> 
@@ -29,7 +29,7 @@ $users =$data-> getAllUsers();
 
                    <!--table-->
           
-      <div class="container">
+      <div class="container" style="direction:ltr;">
           <div class="row">
               <div class="col-md-12 mx-auto">
                   <div class="card">
