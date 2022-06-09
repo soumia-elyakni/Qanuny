@@ -1,17 +1,11 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="public/css/style.css">
     <title>Admin</title>
-   
 </head>
 <body>
 <div class="back-img"></div>
-<div class="container-fluid w-50" >
+<div class="container-fluid w-50 position-absolute top-50  translate-middle mx-auto"  >
         <div class="row">
             <div class="col-8 offset-2">
                 <div class="card shadow">
@@ -43,6 +37,7 @@
                 </div>
             </div>
         </div>
+</div>
 
 
     <!-- <div class="container">
@@ -63,5 +58,3 @@
 </form>
 </div>
 </div> -->
-</body>
-</html>
