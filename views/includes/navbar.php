@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="../public/css/navbar.css">
-<header style="direction : rtl;">
+<link rel="stylesheet" href="public/css/navbar.css">
+<header class="header" style="direction : rtl;">
      
       <nav class="navbar rtl navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
@@ -63,20 +63,33 @@
         <div class="modal-dialog">
           <div class="modal-content p-4" style="direction : rtl;">
             <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">حساب جديد</h5>
-              <!--   -->
+              <h4 class="modal-title text-primary" id="staticBackdropLabel">حساب جديد</h4>
+
+              
+
             </div>
-            <div class="modal-body justify-between m-auto">
+
+            <form style="visibility :visible;" class="modal-body justify-between m-auto"  id="inscriptionform">
+
+               
     
-              <input type="text" placeholder="الاسم العائلي" name="nom" class="mb-4" id="nom">
-    
-              <input type="text" placeholder="الاسم الشخصي" name="prenom" class="mb-4" id="prenom">
-    
-              <input type="text" placeholder="رقم البطاقة الوطنية" name="cin" class="mb-4" id="cin">
-    
-              <input type="tel" placeholder="رقم الهاتف" name="tel" class="mb-4" id="tel">
-    
-              <select name="role" class="select" id="role" style="width : 190px">
+              <input type="text" placeholder="الاسم العائلي" name="nom" class="mb-1" id="nom">
+              <input type="text" placeholder="الاسم الشخصي" name="prenom" class="mb-1" id="prenom">
+
+              </br>
+              <span id="nomMessage">1</span>
+              <span id="prenomMessage">2</span>
+              </br>
+
+              <input type="text" placeholder="رقم البطاقة الوطنية" name="cin" class="mt-3 mb-1" id="cin">
+              <input type="tel" placeholder="رقم الهاتف" name="tel" class="mt-3 mb-1" id="tel">
+              </br>
+
+              <span id="cinMessage">3</span>
+              <span id="telMessage">4</span>
+              </br>
+
+              <select name="ville" class="select mt-3" id="ville" style="width : 190px">
     
                     <option selected="selected" value="0">-اختر العمالة أو الإقليم-</option>
                     <option value="31">أكادير إدا وتنان</option>
@@ -164,22 +177,59 @@
                     <option value="37">زاكورة</option>
     
             	</select>
+              
                
-              <select name="role" class="" id="role" style="width : 190px">
+              <select name="role" class="select mt-3" id="role" style="width : 190px">
                    <option selected="selected" value="0">-اختر الدور-</option>
                    <option value="عميل">عميل</option>
                    <option value="محام">محام</option>
                    <option value="موثق">موثق</option>
               </select>
-    
-            </div>
+
+              </br>
+              <span class="mb-1" id="villeMessage">5</span>
+              <span class="mb-1" id="roleMessage">6</span>
+              </br>
+
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">الغاء</button>
-              <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#signin2" onclick="">
+              <button type="sunmit" class="btn btn-primary m-1" id="suivant">
                   التالي
               </button>
+            
+              </form>
+
+              <form style="visibility : hidden;" class="modal-body justify-between m-auto"  id="inscriptionform2"> 
+
+              <input type="file" name="myfile">
+
+              <label for="cinphoto">انزل صورتك الشخصية رفقة بطاقتك الوطنية</label>
+              <input type="file" name="cinphoto">
+
+              <label for="cinphoto">انزل صورة بطاقة الرخصة المهنية</label>
+              <input type="file" name="cinphoto">
+
+              <button type="sunmit" class="btn btn-primary m-1" id="suivant">
+
+              </form>
+
+              <form style="visibility : hidden;" class="modal-body justify-between m-auto"  id="inscriptionform3"> 
 
 
+              <input type="text" placeholder="البريد الالكتروني" class="mb-1 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;" id=""></br>
+              <span class="mb-3" id="mailMessage">5</span>
+
+              <input type="text" placeholder="كلمة السر" class="mb-1 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;" id=""></br>
+              <span class="mb-3" id="passMessage">5</span>
+             
+              <input type="text" placeholder="أعد كلمة السر" class="mb-1 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;" id=""></br>
+              <span class="mb-3" id="copassMessage">5</span>
+               
+
+               
+               <button type="sunmit" class="btn btn-primary m-1" id="suivant">
+               
+               </form>
               
 
            
@@ -191,5 +241,6 @@
         </div>
   </div>
     
-      <script src="../public/js/navbar.js"></script>
-      </body>
+      <script src="public/js/navbar.js"></script>
+      <script src="public/js/formInscriptionuser.js"></script>
+      <script src="public/js/formValidateLogin.js"></script>
