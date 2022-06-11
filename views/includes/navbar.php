@@ -182,10 +182,10 @@
               
                
               <select name="role" class="select mt-3" id="role" style="width : 190px">
-                   <option selected="selected" value="0">-اختر الدور-</option>
-                   <option value="عميل">عميل</option>
-                   <option value="محام">محام</option>
-                   <option value="موثق">موثق</option>
+                   <option selected="selected" value="0">-اختر نوع الحساب-</option>
+                   <option value="1">عميل</option>
+                   <option value="2">محام</option>
+                   <option value="3">موثق</option>
               </select>
 
               </br>
@@ -195,7 +195,7 @@
 
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">الغاء</button>
-              <button type="sunmit" class="btn btn-primary m-1" id="suivant">
+              <button type="submit" class="btn btn-primary m-1" id="suivant" onclick="suivant()">
                   التالي
               </button>
             </div>
@@ -211,6 +211,16 @@
               <label for="cinphoto">انزل صورة بطاقة الرخصة المهنية</label>
               <input type="file" name="cipphoto" id="cipphoto" >
               <span class="mb-3 text-danger" id="pCipMessage">5</span>
+
+              <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">الغاء</button>
+
+              <button type="button" class="btn btn-primary m-1" id="precedent">الرجوع</button>
+              <button type="submit" class="btn btn-primary m-1" id="suivant2">
+                  التالي
+              </button>
+            </div>
+
 
               </form>
 

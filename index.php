@@ -1,5 +1,7 @@
 <?php
    
+   header('Clear-Site-Data: "cache", "cookies", "storage", "executionContexts"');
+   
    require_once 'autoload.php';
    require_once 'views/includes/navbar.php';
 

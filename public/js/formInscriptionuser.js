@@ -22,6 +22,7 @@
     const villeMessage = document.getElementById('villeMessage');
     const roleMessage = document.getElementById('roleMessage');
     const signin1 = document.getElementById('signin1');
+    const suivant = document.getElementById('suivant');
 
     // Inscription form2 
 
@@ -30,6 +31,7 @@
     const cipphoto = document.getElementById('cipphoto');
     const pCipMessage = document.getElementById('pCipMessage');
     const signin2 = document.getElementById('signin2');
+    const precedent = document.getElementById('precedent');
 
     // Inscrition form3 
 
@@ -39,19 +41,22 @@
     const passMessage = document.getElementById('passMessage');
     const copassword = document.getElementById('copass');
     const copassMessage = document.getElementById('copassMessage');
+    const signin3 = document.getElementById('signin3');
 
 
     if(signin1) {
 
         signin1.addEventListener('submit', (e) => {
+
+
         
             if (nom.value == "") {
                 e.preventDefault()
                 nomMessage.textContent = "املأ الفراغ";
                 nom.style.borderColor = "red"; 
-            } else if (!/^[a-z0-9]{3,}$/i.test(nom.value)) {
+            } else if ((!/^[a-zA-Z- ---]{3,}$/i.test(nom.value)) && (!/^[ا-ي- ---]{2,}$/i.test(nom.value))) {
                 e.preventDefault()
-                nomMessage.textContent = "Le nom doit comporter au moins 3 caractères et être alphanumérique";
+                nomMessage.textContent = "اكتب الاسم صحيحا";
                 nom.style.borderColor = "red"; 
             } else {
                 nomMessage.textContent = "";
@@ -62,9 +67,9 @@
                 e.preventDefault()
                 prenomMessage.textContent = "املأ الفراغ ";
                 prenom.style.borderColor = "red"; 
-            } else if (!/^[a-z0-9]{3,}$/i.test(prenom.value)) {
+            } else if ((!/^[a-zA-Z- ---]{3,}$/i.test(nom.value)) && (!/^[ا-ي- ---]{2,}$/i.test(nom.value))) {
                 e.preventDefault()
-                prenomMessage.textContent = "Le nom doit comporter au moins 3 caractères et être alphanumérique";
+                prenomMessage.textContent = "اكتب الاسم صحيحا";
                 prenom.style.borderColor = "red"; 
             } else {
                 prenomMessage.textContent = "";
@@ -75,38 +80,67 @@
                 e.preventDefault()
                 cinMessage.textContent = "املأ الفراغ";
                 cin.style.borderColor = "red"; 
-            } else if (!/^[a-z0-9]{3,}$/i.test(cin.value)){
+            } else if (!/^[a-zA-Z][0-9a-zA-Z][0-9]*$/i.test(cin.value)){
                 e.preventDefault()
-                cinMessage.textContent = "Le nom doit comporter au moins 3 caractères et être alphanumérique";
+                cinMessage.textContent = "رقم البطاقة الوطنية غير صحيح";
                 cin.style.borderColor = "red"; 
             } else {
                 cinMessage.textContent = "";
                 cin.style.borderColor = "green";
             }
 
-            if (tel.value != ""){
-            if (!/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/.test(contactPhone.value)){
+            if (tel.value == ""){
+                telMessage.textContent = "";
+            }else if (!/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/.test(tel.value)){
                  e.preventDefault()
-                 messagePhone.textContent = "Numero de téléphone non validé";
-                 contactPhone.style.borderColor = "red";
+                 telMessage.textContent = "رقم الهاتف غير صحيح";
+                 tel.style.borderColor = "red";
             } else {
-                 messagePhone.textContent = "";
-                 contactPhone.style.borderColor = "green";
+                telMessage.textContent = "";
+                tel.style.borderColor = "green";
             }
-            }
+            
 
-            if (ville.value == "") {
+
+            if (ville.value == "0") {
                 e.preventDefault()
-                villeMessage.textContent = "املأ الفراغ";
-                ville.style.borderColor = "red"; 
-            } else if (!/^[a-z0-9]{3,}$/i.test(ville.value)) {
-                e.preventDefault()
-                villeMessage.textContent = "Le nom doit comporter au moins 3 caractères et être alphanumérique";
-                ville.style.borderColor = "red"; 
+                villeMessage.textContent = "اختر مدينة الاقامة";
+                ville.style.borderColor = "red";  
             } else {
                 villeMessage.textContent = "";
                 ville.style.borderColor = "green";
             }
+
+            
+            if (role.value == "0") {
+                e.preventDefault()
+                roleMessage.textContent = "اختر نوع حسابك";
+                role.style.borderColor = "red";  
+            } else {
+                roleMessage.textContent = "";
+                role.style.borderColor = "green";
+            } 
+            
+            
+            
+    })
+
+}
+
+
+            signin1.style.display = "none";
+                
+            if(role.value == "0"){
+                signin3.style.display = "block";
+            } else {
+                signin2.style.display = "block";
+            }
+
+
+    
+
+
+
         
 
 
@@ -115,33 +149,32 @@
 
 
            
-            if (passInput.value == "") {
-                e.preventDefault()
-                messagePass.textContent = "Ce Champ est obligatoire";
-                passInput.style.borderColor = "red";
+    //         if (passInput.value == "") {
+    //             e.preventDefault()
+    //             messagePass.textContent = "Ce Champ est obligatoire";
+    //             passInput.style.borderColor = "red";
         
-            } else if (passInput.value.length < 6 || passInput.value.length > 20 ) {
-                e.preventDefault()
-                messagePass.textContent = "Le mot de passe doit être entre 6 et 20 caractères";
-                passInput.style.borderColor = "red";
+    //         } else if (passInput.value.length < 6 || passInput.value.length > 20 ) {
+    //             e.preventDefault()
+    //             messagePass.textContent = "Le mot de passe doit être entre 6 et 20 caractères";
+    //             passInput.style.borderColor = "red";
         
-            } else {
-                messagePass.textContent = "";
-                passInput.style.borderColor = "green";
-            }
-            if(conpasswordInput.value == ""){
-                e.preventDefault()
-                messageConPass.textContent = "Ce Champ est obligatoire";
-                conpasswordInput.style.borderColor = "red";
-            } else if (conpasswordInput.value != passInput.value){
-                e.preventDefault()
-                messageConPass.textContent = "Les mots de passe ne sont pas identiques ";
-                passInput.style.borderColor = "red";
-                conpasswordInput.style.borderColor = "red";
-            } else {
-                messagePass.textContent = "";
-                conpasswordInput.style.borderColor = "green"; 
-            }
-        })
-    }
+    //         } else {
+    //             messagePass.textContent = "";
+    //             passInput.style.borderColor = "green";
+    //         }
+    //         if(conpasswordInput.value == ""){
+    //             e.preventDefault()
+    //             messageConPass.textContent = "Ce Champ est obligatoire";
+    //             conpasswordInput.style.borderColor = "red";
+    //         } else if (conpasswordInput.value != passInput.value){
+    //             e.preventDefault()
+    //             messageConPass.textContent = "Les mots de passe ne sont pas identiques ";
+    //             passInput.style.borderColor = "red";
+    //             conpasswordInput.style.borderColor = "red";
+    //         } else {
+    //             messagePass.textContent = "";
+    //             conpasswordInput.style.borderColor = "green"; 
+    //         }
+    
 
