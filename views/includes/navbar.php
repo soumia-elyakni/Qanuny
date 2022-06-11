@@ -37,11 +37,13 @@
                      <h5 class="modal-title text-primary" id="staticBackdropLabel">تسجيل الدخول</h5>
                      <!-- <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button> -->
                    </div>
-                   <form class="modal-body">
+                   <form class="modal-body" action="" méthode="POST" id="loginform">
 
-                        <input type="text" placeholder="اسم المستخدم" class="mb-5 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;"></br>
+                        <input type="text" placeholder="البريد الالكتروني للمستخدم" class="mb-1 text-secondary bg-light" id="usermail" style="border : none; border-bottom: grey solid 1px ;"></br>
+                        <span class="" id="usmailMessage">5</span></br>
 
-                        <input type="text" placeholder="كلمة السر" class="mb-2 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;"></br>
+                        <input type="text" placeholder="كلمة السر" class="mt-3 text-secondary bg-light" id="userpass" style="border : none; border-bottom: grey solid 1px ;"></br>
+                        <span class="mb-2" id="upassMessage">5</span></br>
                         <a href="#" class="" style="font-size: 13px ;">هل نسيت كلمة السر؟</a>
                         <div class="form-check form-switch w-25">
                           <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
@@ -69,7 +71,7 @@
 
             </div>
 
-            <form style="visibility :visible;" class="modal-body justify-between m-auto"  id="inscriptionform">
+            <form style="visibility :visible;" class="modal-body justify-between m-auto"  id="signin1">
 
                
     
@@ -77,16 +79,16 @@
               <input type="text" placeholder="الاسم الشخصي" name="prenom" class="mb-1" id="prenom">
 
               </br>
-              <span id="nomMessage">1</span>
-              <span id="prenomMessage">2</span>
+              <span class="text-danger" style="margin-left: 150px ;" id="nomMessage"></span>
+              <span class="text-danger" id="prenomMessage"></span>
               </br>
 
               <input type="text" placeholder="رقم البطاقة الوطنية" name="cin" class="mt-3 mb-1" id="cin">
               <input type="tel" placeholder="رقم الهاتف" name="tel" class="mt-3 mb-1" id="tel">
               </br>
 
-              <span id="cinMessage">3</span>
-              <span id="telMessage">4</span>
+              <span class="text-danger" id="cinMessage"></span>
+              <span class="text-danger" id="telMessage"></span>
               </br>
 
               <select name="ville" class="select mt-3" id="ville" style="width : 190px">
@@ -187,8 +189,8 @@
               </select>
 
               </br>
-              <span class="mb-1" id="villeMessage">5</span>
-              <span class="mb-1" id="roleMessage">6</span>
+              <span class="mb-1 text-danger" id="villeMessage"></span>
+              <span class="mb-1 text-danger" id="roleMessage"></span>
               </br>
 
             <div class="modal-footer">
@@ -196,51 +198,46 @@
               <button type="sunmit" class="btn btn-primary m-1" id="suivant">
                   التالي
               </button>
+            </div>
             
               </form>
 
-              <form style="visibility : hidden;" class="modal-body justify-between m-auto"  id="inscriptionform2"> 
-
-              <input type="file" name="myfile">
-
+              <form style="display: none;" id="signin2">
+              
               <label for="cinphoto">انزل صورتك الشخصية رفقة بطاقتك الوطنية</label>
-              <input type="file" name="cinphoto">
+              <input type="file" name="cinphoto" id="cinphoto">
+              <span class="mb-3 text-danger" id="pCinMessage">5</span>
 
               <label for="cinphoto">انزل صورة بطاقة الرخصة المهنية</label>
-              <input type="file" name="cinphoto">
-
-              <button type="sunmit" class="btn btn-primary m-1" id="suivant">
+              <input type="file" name="cipphoto" id="cipphoto" >
+              <span class="mb-3 text-danger" id="pCipMessage">5</span>
 
               </form>
 
-              <form style="visibility : hidden;" class="modal-body justify-between m-auto"  id="inscriptionform3"> 
-
-
-              <input type="text" placeholder="البريد الالكتروني" class="mb-1 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;" id=""></br>
-              <span class="mb-3" id="mailMessage">5</span>
-
-              <input type="text" placeholder="كلمة السر" class="mb-1 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;" id=""></br>
-              <span class="mb-3" id="passMessage">5</span>
-             
-              <input type="text" placeholder="أعد كلمة السر" class="mb-1 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;" id=""></br>
-              <span class="mb-3" id="copassMessage">5</span>
-               
-
-               
-               <button type="sunmit" class="btn btn-primary m-1" id="suivant">
-               
-               </form>
               
 
-           
+              <form style="display : none;" id="signin3"> 
 
 
+              <input type="text" placeholder="البريد الالكتروني" class="mb-1 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;" id="usmail"></br>
+              <span class="mb-3 text-danger" id="mailMessage">5</span>
 
+              <input type="text" placeholder="كلمة السر" class="mb-1 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;" id="pass"></br>
+              <span class="mb-3 text-danger" id="passMessage">5</span>
+             
+              <input type="text" placeholder="أعد كلمة السر" class="mb-1 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;" id="copass"></br>
+              <span class="mb-3 text-danger" id="copassMessage">5</span>
+               
+               
+              <button type="submit" class="btn btn-primary m-1" id="submit" name="submit">
+                
+              </form>
+              
             </div>
           </div>
         </div>
   </div>
     
-      <script src="public/js/navbar.js"></script>
-      <script src="public/js/formInscriptionuser.js"></script>
-      <script src="public/js/formValidateLogin.js"></script>
+      <script src="./public/js/navbar.js"></script>
+      <script src="./public/js/formInscriptionuser.js"></script>
+      <script src="./public/js/formValidateLogin.js"></script>
