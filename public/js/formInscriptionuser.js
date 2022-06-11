@@ -46,9 +46,8 @@
 
     if(signin1) {
 
-        signin1.addEventListener('submit', (e) => {
-
-
+    
+            signin1.addEventListener('submit', (e) =>{
         
             if (nom.value == "") {
                 e.preventDefault()
@@ -100,8 +99,6 @@
                 tel.style.borderColor = "green";
             }
             
-
-
             if (ville.value == "0") {
                 e.preventDefault()
                 villeMessage.textContent = "اختر مدينة الاقامة";
@@ -111,7 +108,6 @@
                 ville.style.borderColor = "green";
             }
 
-            
             if (role.value == "0") {
                 e.preventDefault()
                 roleMessage.textContent = "اختر نوع حسابك";
@@ -120,21 +116,23 @@
                 roleMessage.textContent = "";
                 role.style.borderColor = "green";
             } 
-            
-            
-            
-    })
+
+            signin1.style.display = "none";
+                
+            if(role.value == "1"){
+                signin3.style.display = "block";
+            } else if((role.value = "2") || (role.value ="3")) {
+                signin2.style.display = "block";
+            }
+
+             
+
+        }) 
 
 }
 
 
-            signin1.style.display = "none";
-                
-            if(role.value == "0"){
-                signin3.style.display = "block";
-            } else {
-                signin2.style.display = "block";
-            }
+           
 
 
     

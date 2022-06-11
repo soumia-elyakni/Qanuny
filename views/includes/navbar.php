@@ -71,7 +71,7 @@
 
             </div>
 
-            <form style="visibility :visible;" class="modal-body justify-between m-auto"  id="signin1">
+            <form style="display :block ;" class="modal-body justify-between m-auto"  id="signin1">
 
                
     
@@ -195,7 +195,7 @@
 
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">الغاء</button>
-              <button type="submit" class="btn btn-primary m-1" id="suivant" onclick="suivant()">
+              <button type="submit" class="btn btn-primary m-1" id="suivant">
                   التالي
               </button>
             </div>
