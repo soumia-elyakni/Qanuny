@@ -15,9 +15,16 @@ class UserControllers {
                 'tel' => $_POST['tel'],
                 'ville' => $_POST['ville'],
                 'role' => $_POST['role']
-                
+            
             ];
+
+            $result = user::add($data);
+            if($result === "ok "){
+            }else{
+            echo $result;
         }
     }
 }
+}
+
 ?>

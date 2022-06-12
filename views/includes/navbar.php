@@ -1,3 +1,10 @@
+<?php
+if(isset($_POST['submit'])){
+  $newUSer = new UserControllers();
+  $newUser-> addUser();
+}
+?>
+
 <link rel="stylesheet" href="public/css/navbar.css">
 <header class="header" style="direction : rtl;">
      
@@ -71,7 +78,7 @@
 
             </div>
 
-            <form style="display :block ;" class="modal-body justify-between m-auto"  id="signin1">
+            <form style="display :block ;" class="modal-body justify-between m-auto" method="POST" id="signin1" action="addUser">
 
                
     
