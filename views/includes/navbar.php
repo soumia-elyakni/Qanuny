@@ -78,7 +78,7 @@ if(isset($_POST['submit'])){
 
             </div>
 
-            <form style="display :block ;" class="modal-body justify-between m-auto" method="POST" id="signin1" action="addUser">
+            <form action="addUser" method="POST" style="display :block ;" class="modal-body justify-between m-auto"  id="signin1" >
 
                
     
