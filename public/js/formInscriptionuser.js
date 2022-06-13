@@ -1,12 +1,15 @@
- //const's
-    // login form 
+//Regex'S
+    var FregexName = /^[a-zA-Z- ---]{3,}$/i ;
+    var AregexName = /^[ا-ي- ---]{2,}$/i ;
+    var Ncinregex = /^[a-zA-Z][0-9a-zA-Z][0-9]*$/i ;
+    var Telregex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/ ;
+    var Mailregex = /^[a-zA-Z0-9._-]+[@]+[\w]+[.]+(com|ma|org|io|fr|uk)$/ ;
 
-    const userMail = document.getElementById('usermail');
-    const usmailMessage = document.getElementById('usmailMessage');
-    const userPass = document.getElementById('userpass');
-    const upassMessage = document.getElementById('upassMessage');
-    const loginForm = document.getElementById('loginform'); 
+//const's
+    const signup = document.getElementById('fullsignup');
+    // const suivant = document.getElementById('suivant');
 
+    
     // Inscription form1 
     
     const nom = document.getElementById('nom');
@@ -21,8 +24,10 @@
     const role = document.getElementById('role');
     const villeMessage = document.getElementById('villeMessage');
     const roleMessage = document.getElementById('roleMessage');
-    const signin1 = document.getElementById('signin1');
-    const suivant = document.getElementById('suivant');
+    const signup1 = document.getElementById('signup1');
+    // const regixemail = '(?:[a-z0-9!#$%&'*+/=?/^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])'
+    
+    
 
     // Inscription form2 
 
@@ -30,8 +35,8 @@
     const pCinMessage = document.getElementById('pCinMessage');
     const cipphoto = document.getElementById('cipphoto');
     const pCipMessage = document.getElementById('pCipMessage');
-    const signin2 = document.getElementById('signin2');
-    const precedent = document.getElementById('precedent');
+    const signup2 = document.getElementById('signup2');
+    
 
     // Inscrition form3 
 
@@ -41,19 +46,34 @@
     const passMessage = document.getElementById('passMessage');
     const copassword = document.getElementById('copass');
     const copassMessage = document.getElementById('copassMessage');
-    const signin3 = document.getElementById('signin3');
+    const signup3 = document.getElementById('signup3');
 
-
-    if(signin1) {
+    // Suivant 
 
     
-            signin1.addEventListener('submit', (e) =>{
+    role.addEventListener("click", (e) => {
+        if (e.target.value == "1") {
+            signup3.style.display = "block";
+            signup2.style.display = "none";
+        }else if ((e.target.value == "2")||(e.target.value == "3")) {
+            signup2.style.display = "block";
+            signup3.style.display = "block";
+        }
+    });
+
+
+    
+    
+    if(signup) {
+
+    
+            signup.addEventListener('submit', (e) =>{
         
             if (nom.value == "") {
                 e.preventDefault()
                 nomMessage.textContent = "املأ الفراغ";
                 nom.style.borderColor = "red"; 
-            } else if ((!/^[a-zA-Z- ---]{3,}$/i.test(nom.value)) && (!/^[ا-ي- ---]{2,}$/i.test(nom.value))) {
+            } else if ((!FregexName.test(nom.value)) && (!AregexName.test(nom.value))) {
                 e.preventDefault()
                 nomMessage.textContent = "اكتب الاسم صحيحا";
                 nom.style.borderColor = "red"; 
@@ -66,7 +86,7 @@
                 e.preventDefault()
                 prenomMessage.textContent = "املأ الفراغ ";
                 prenom.style.borderColor = "red"; 
-            } else if ((!/^[a-zA-Z- ---]{3,}$/i.test(nom.value)) && (!/^[ا-ي- ---]{2,}$/i.test(nom.value))) {
+            } else if ((!FregexName.test(prenom.value)) && (!AregexName.test(prenom.value))) {
                 e.preventDefault()
                 prenomMessage.textContent = "اكتب الاسم صحيحا";
                 prenom.style.borderColor = "red"; 
@@ -79,7 +99,7 @@
                 e.preventDefault()
                 cinMessage.textContent = "املأ الفراغ";
                 cin.style.borderColor = "red"; 
-            } else if (!/^[a-zA-Z][0-9a-zA-Z][0-9]*$/i.test(cin.value)){
+            } else if (!Ncinregex.test(cin.value)){
                 e.preventDefault()
                 cinMessage.textContent = "رقم البطاقة الوطنية غير صحيح";
                 cin.style.borderColor = "red"; 
@@ -90,7 +110,7 @@
 
             if (tel.value == ""){
                 telMessage.textContent = "";
-            }else if (!/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/.test(tel.value)){
+            }else if (!Telregex.test(tel.value)){
                  e.preventDefault()
                  telMessage.textContent = "رقم الهاتف غير صحيح";
                  tel.style.borderColor = "red";
@@ -117,12 +137,19 @@
                 role.style.borderColor = "green";
             } 
 
-            signin1.style.display = "none";
-                
-            if(role.value == "1"){
-                signin3.style.display = "block";
-            } else if((role.value = "2") || (role.value ="3")) {
-                signin2.style.display = "block";
+        
+
+            if (usMail.value == "") {
+                e.preventDefault()
+                mailMessage.textContent = "املأ الفراغ";
+                usMail.style.borderColor = "red";
+            } else if (!Mailregex.test(usMail.value)){
+                e.preventDefault()
+                mailMessage.textContent = "املأ الفراغ بما يناسب ماشي باشما كان";
+                usMail.style.borderColor = "red";
+            } else {
+                mailMessage.textContent = "";
+                usMail.style.borderColor = "green";
             }
 
              

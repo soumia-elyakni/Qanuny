@@ -29,7 +29,6 @@ if(loginForm) {
             password.style.borderColor = "green";
         }
 
-        console.log('soussou')
     })
 }
 

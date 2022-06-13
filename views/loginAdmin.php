@@ -14,7 +14,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="nouveauxJuristes" id="loginform">
+                        <form action="nouveauxJuristes" id="loginform" method="POST">
                             <div class="form-group row mb-3 d-md-block">
                                 
                                 <div class="col-sm-10">
@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-block">الدخول</button>
+                                <button type="submit" class="btn btn-primary btn-block float-start">الدخول</button>
                                 
                             </div>
                         </form>

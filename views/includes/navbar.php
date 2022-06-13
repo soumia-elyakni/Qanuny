@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#signin">
+                <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#signup">
                   حساب جديد
                 </button> 
               </li>
@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
                   تسجيل الدخول
                 </button>
               </li>
-              <li class="nav-item dropdown">
+              
 
             </ul>
 
@@ -42,7 +42,8 @@ if(isset($_POST['submit'])){
                  <div class="rtl modal-content bg-light">
                    <div class="modal-header">
                      <h5 class="modal-title text-primary" id="staticBackdropLabel">تسجيل الدخول</h5>
-                     <!-- <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button> -->
+
+                     <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                    </div>
                    <form class="modal-body" action="" méthode="POST" id="loginform">
 
@@ -68,36 +69,42 @@ if(isset($_POST['submit'])){
 
              <!-- / login modal -->
              <!-- iscription modal -->
-             <div class="modal fade" style="visibility : visible ;" id="signin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="exampleModalLabel"  aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content p-4" style="direction : rtl;">
             <div class="modal-header">
               <h4 class="modal-title text-primary" id="staticBackdropLabel">حساب جديد</h4>
-
-              
-
+              <button><i class="fa-light fa-xmark"></i></button>
+               
             </div>
 
-            <form action="addUser" method="POST" style="display :block ;" class="modal-body justify-between m-auto"  id="signin1" >
 
-               
-    
-              <input type="text" placeholder="الاسم العائلي" name="nom" class="mb-1" id="nom">
-              <input type="text" placeholder="الاسم الشخصي" name="prenom" class="mb-1" id="prenom">
+          <form action="addUser.php" method="POST" id="fullsignup" >
+            <div class="modal-body">
 
-              </br>
-              <span class="text-danger" style="margin-left: 150px ;" id="nomMessage"></span>
-              <span class="text-danger" id="prenomMessage"></span>
-              </br>
+            <div   class="row  justify-between m-auto"  id="signup1" >
 
-              <input type="text" placeholder="رقم البطاقة الوطنية" name="cin" class="mt-3 mb-1" id="cin">
-              <input type="tel" placeholder="رقم الهاتف" name="tel" class="mt-3 mb-1" id="tel">
-              </br>
+              <div class="col-6 ">
+                <input type="text" placeholder="الاسم العائلي" name="nom" class="mb-1" id="nom">
+                <small class="text-danger" id="nomMessage"></small>
+              </div>
 
-              <span class="text-danger" id="cinMessage"></span>
-              <span class="text-danger" id="telMessage"></span>
-              </br>
+              <div class="col-6">
+                <input type="text" placeholder="الاسم الشخصي" name="prenom" class="mb-1" id="prenom">
+                <small class="text-danger" id="prenomMessage"></small>
+              </div>
+              
+              <div class="col-6">
+                <input type="text" placeholder="رقم البطاقة الوطنية" name="cin" class="mt-3 mb-1" id="cin">
+                <small class="text-danger" id="cinMessage"></small>
+              </div>
 
+              <div class="col-6">
+                <input type="tel" placeholder="رقم الهاتف" name="tel" class="mt-3 mb-1" id="tel">
+                <small class="text-danger" id="telMessage"></small>
+              </div>
+              
+              <div class="col-6 mb-3">
               <select name="ville" class="select mt-3" id="ville" style="width : 190px">
     
                     <option selected="selected" value="0">-اختر العمالة أو الإقليم-</option>
@@ -186,74 +193,78 @@ if(isset($_POST['submit'])){
                     <option value="37">زاكورة</option>
     
             	</select>
+              <small class="mb-1 text-danger" id="villeMessage"></small>
+              </div>
               
-               
+              <div class="col-6 mb-3">
               <select name="role" class="select mt-3" id="role" style="width : 190px">
                    <option selected="selected" value="0">-اختر نوع الحساب-</option>
                    <option value="1">عميل</option>
                    <option value="2">محام</option>
                    <option value="3">موثق</option>
               </select>
+              <small class="mb-1 text-danger" id="roleMessage"></small>
+              </div>
 
-              </br>
-              <span class="mb-1 text-danger" id="villeMessage"></span>
-              <span class="mb-1 text-danger" id="roleMessage"></span>
-              </br>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">الغاء</button>
-              <button type="submit" class="btn btn-primary m-1" id="suivant">
+            <!-- <div>
+              <button type="button" class="btn btn-primary m-1 float-start" id="suivant" style="display: block;" onclick="next()">
                   التالي
               </button>
-            </div>
+            </div> -->
             
-              </form>
-
-              <form style="display: none;" id="signin2">
-              
-              <label for="cinphoto">انزل صورتك الشخصية رفقة بطاقتك الوطنية</label>
-              <input type="file" name="cinphoto" id="cinphoto">
-              <span class="mb-3 text-danger" id="pCinMessage">5</span>
-
-              <label for="cinphoto">انزل صورة بطاقة الرخصة المهنية</label>
-              <input type="file" name="cipphoto" id="cipphoto" >
-              <span class="mb-3 text-danger" id="pCipMessage">5</span>
-
-              <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">الغاء</button>
-
-              <button type="button" class="btn btn-primary m-1" id="precedent">الرجوع</button>
-              <button type="submit" class="btn btn-primary m-1" id="suivant2">
-                  التالي
-              </button>
             </div>
 
+              <div style="display: none;" id="signup2" class="m-auto p-3">
 
-              </form>
+              <div class="col-6 mb-3 text-dark">
+              <label for="cinphoto" class="text-dark">انزل صورتك الشخصية رفقة بطاقتك الوطنية</label>
+              <input type="file" filetype=".jpg|.jpeg|.png|.pdf" name="cinphoto" id="cinphoto">
+              <small class="mb-3 text-danger" id="pCinMessage"></small>
+              </div>
+              
+              <div class="col-6 mt-3 text-dark"> 
+              <label for="cinphoto" class="text-dark">انزل صورة بطاقة الرخصة المهنية</label>
+              <input type="file" filetype=".jpg|.jpeg|.png|.pdf" name="cipphoto" id="cipphoto" >
+              <small class="mb-3 text-danger" id="pCipMessage"></small> 
+              </div>
+
+              </div>
 
               
 
-              <form style="display : none;" id="signin3"> 
+              <div style="display : none;" id="signup3" class="m-auto p-3"> 
 
+              <div class="py-1 ">
+              <input type="text" placeholder="البريد الالكتروني"name="mail" class="mb-1 text-secondary" id="usmail">
+              <small class="mb-3 text-danger" id="mailMessage"></small>
+              </div>
 
-              <input type="text" placeholder="البريد الالكتروني" class="mb-1 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;" id="usmail"></br>
-              <span class="mb-3 text-danger" id="mailMessage">5</span>
-
-              <input type="text" placeholder="كلمة السر" class="mb-1 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;" id="pass"></br>
-              <span class="mb-3 text-danger" id="passMessage">5</span>
+              <div class="py-1 ">
+              <input type="text" placeholder="كلمة السر" class="mb-1 text-secondary " id="pass"></br>
+              <small class="mb-3 text-danger" id="passMessage"></small>
+              </div>
              
-              <input type="text" placeholder="أعد كلمة السر" class="mb-1 text-secondary bg-light" style="border : none; border-bottom: grey solid 1px ;" id="copass"></br>
-              <span class="mb-3 text-danger" id="copassMessage">5</span>
-               
-               
-              <button type="submit" class="btn btn-primary m-1" id="submit" name="submit">
+              <div class="py-1 ">
+              <input type="text" placeholder="أعد كلمة السر" class="mb-1 text-secondary"  id="copass"></br>
+              <small class="mb-3 text-danger" id="copassMessage"></small>
+              </div>
                 
-              </form>
-              
-            </div>
+             </div>
+
+          <div class="modal-footer">
+          
+          <button type="button" class="btn btn-secondary float-start" data-bs-dismiss="modal">الغاء</button>
+          <button type="submit" class="btn btn-primary m-1 float-start" id="submit" name="submit">التسجيل</button>
           </div>
+
+           </div>
+         </form>
+
         </div>
-  </div>
+      </div>
+    </div>
+      
+         
     
       <script src="./public/js/navbar.js"></script>
       <script src="./public/js/formInscriptionuser.js"></script>
