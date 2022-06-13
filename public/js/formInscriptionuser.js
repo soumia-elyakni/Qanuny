@@ -24,8 +24,9 @@
     const role = document.getElementById('role');
     const villeMessage = document.getElementById('villeMessage');
     const roleMessage = document.getElementById('roleMessage');
+    const sexe = document.getElementById('sexe');
+    const sexeMessage = document.getElementById('sexeMessage');
     const signup1 = document.getElementById('signup1');
-    // const regixemail = '(?:[a-z0-9!#$%&'*+/=?/^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])'
     
     
 
@@ -137,6 +138,18 @@
                 role.style.borderColor = "green";
             } 
 
+            // if(sexe.value = "0") {
+            //     e.preventDefault()
+            //     sexeMessage.textContent = "ما هو جنسك؟";
+            //     sexe.style.borderColor = "red";
+            // } else if((sexe.value ="1")||(sexe.value = "2")){
+            //     alert('wak waaaaak a l7a9');
+            //     sexeMessage.textContent = "";
+            //     sexe.style.borderColor = "green";
+            // }
+
+
+
         
 
             if (usMail.value == "") {
@@ -145,11 +158,43 @@
                 usMail.style.borderColor = "red";
             } else if (!Mailregex.test(usMail.value)){
                 e.preventDefault()
-                mailMessage.textContent = "املأ الفراغ بما يناسب ماشي باشما كان";
+                mailMessage.textContent = "  املأ الفراغ بما يناسب ماشي باشما كان اسميتك";
                 usMail.style.borderColor = "red";
             } else {
                 mailMessage.textContent = "";
                 usMail.style.borderColor = "green";
+            }
+
+
+                       
+            if (password.value == "") {
+                e.preventDefault()
+                passMessage.textContent = "اكتب كلمة سر";
+                password.style.borderColor = "red";
+        
+            } else if (password.value.length < 6 || password.value.length > 20 ) {
+                e.preventDefault()
+                passMessage.textContent = "من فضلك كلمة سر لاتقل عن 6حروف ولا تتعدى 20";
+                passInput.style.borderColor = "red";
+        
+            } else {
+                passMessage.textContent = "";
+                password.style.borderColor = "green";
+            }
+
+
+            if(copassword.value == ""){
+                e.preventDefault()
+                copassMessage.textContent = "اعد كلمة السر من فضلك";
+                copassword.style.borderColor = "red";
+            } else if (copassword.value != password.value){
+                e.preventDefault()
+                copassMessage.textContent = "كلمتي السر غير متشابهة";
+                password.style.borderColor = "red";
+                copassword.style.borderColor = "red";
+            } else {
+                copassMessage.textContent = "";
+                copassword.style.borderColor = "green"; 
             }
 
              
@@ -173,33 +218,9 @@
 
 
 
-           
-    //         if (passInput.value == "") {
-    //             e.preventDefault()
-    //             messagePass.textContent = "Ce Champ est obligatoire";
-    //             passInput.style.borderColor = "red";
-        
-    //         } else if (passInput.value.length < 6 || passInput.value.length > 20 ) {
-    //             e.preventDefault()
-    //             messagePass.textContent = "Le mot de passe doit être entre 6 et 20 caractères";
-    //             passInput.style.borderColor = "red";
-        
-    //         } else {
-    //             messagePass.textContent = "";
-    //             passInput.style.borderColor = "green";
-    //         }
-    //         if(conpasswordInput.value == ""){
-    //             e.preventDefault()
-    //             messageConPass.textContent = "Ce Champ est obligatoire";
-    //             conpasswordInput.style.borderColor = "red";
-    //         } else if (conpasswordInput.value != passInput.value){
-    //             e.preventDefault()
-    //             messageConPass.textContent = "Les mots de passe ne sont pas identiques ";
-    //             passInput.style.borderColor = "red";
-    //             conpasswordInput.style.borderColor = "red";
-    //         } else {
-    //             messagePass.textContent = "";
-    //             conpasswordInput.style.borderColor = "green"; 
-    //         }
+
+
+
+ 
     
 
