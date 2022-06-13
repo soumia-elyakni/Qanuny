@@ -9,17 +9,23 @@ class UserControllers {
     public function addUser(){
         if(isset($_POST['submit'])){
             $data = [
+
                 'nom' => $_POST['nom'],
                 'prenom' => $_POST['prenom'],
                 'cin' => $_POST['cin'],
-                'tel' => $_POST['tel'],
+                'sexe' => $_POST['sexe'],
+                'telephone' => $_POST['tel'],
                 'ville' => $_POST['ville'],
-                'role' => $_POST['role']
+                'role' => $_POST['role'],
+                'mail' => $_POST['usmail'],
+                'pass' => $_POST['password'],
             
             ];
 
             $result = user::add($data);
+            
             if($result === "ok "){
+                header('location: .BASE_URL');
             }else{
             echo $result;
         }
