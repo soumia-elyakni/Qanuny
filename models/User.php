@@ -28,5 +28,26 @@ class user{
 
 
     }
+
+    static function update($data){
+        $stmt = DB::connect()->prepare('UPDATE users SET nom = :nom , prenom = :prenom , cin = :cin , tel = :tel , ville = :ville , role = :role  WHERE id= :id ');
+
+        $stmt->bindParam(':id', $data['id']);
+        $stmt->bindParam(':nom', $data['nom']);
+        $stmt->bindParam(':prenom', $data['prenom']);
+        $stmt->bindParam(':cin', $data['cin']);
+        $stmt->bindParam(':tel', $data['tel']);
+        $stmt->bindParam(':ville', $data['ville']);
+        $stmt->bindParam(':role', $data['role']);
+
+        if($stmt->execute()){
+            return 'ok';
+            header('location :Tableau');
+        }else{
+            return 'error';
+        }
+
+
+    }
 }
 ?>
