@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['submit'])){
-  $newUSer = new UserControllers();
+  $newUser = new UserControllers();
   $newUser-> addUser();
 }
 ?>
@@ -8,9 +8,9 @@ if(isset($_POST['submit'])){
 <link rel="stylesheet" href="public/css/navbar.css">
 <header class="header" style="direction : rtl;">
      
-      <nav class="navbar rtl navbar navbar-expand-lg fixed-top">
+      <nav class="navbar rtl navbar navbar-expand-lg fixed-top bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="home">القانوني</a>
+          <a class="navbar-brand fs-3" href="home">القانوني</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="iconify" data-icon="octicon:law-24"></span>
           </button>
@@ -50,7 +50,7 @@ if(isset($_POST['submit'])){
                         <input type="text" placeholder="البريد الالكتروني للمستخدم" class="mb-1 text-secondary bg-light" id="usermail" style="border : none; border-bottom: grey solid 1px ;"></br>
                         <span class="" id="usmailMessage">5</span></br>
 
-                        <input type="text" placeholder="كلمة السر" class="mt-3 text-secondary bg-light" id="userpass" style="border : none; border-bottom: grey solid 1px ;"></br>
+                        <input type="password" placeholder="كلمة السر" class="mt-3 text-secondary bg-light" id="userpass" style="border : none; border-bottom: grey solid 1px ;"></br>
                         <span class="mb-2" id="upassMessage">5</span></br>
                         <a href="#" class="" style="font-size: 13px ;">هل نسيت كلمة السر؟</a>
                         <div class="form-check form-switch w-25">
@@ -79,7 +79,7 @@ if(isset($_POST['submit'])){
             </div>
 
 
-          <form action="addUser.php" method="POST" id="fullsignup" >
+          <form  method="POST" id="fullsignup" >
             <div class="modal-body">
 
             <div   class="row  justify-between m-auto"  id="signup1" >
@@ -100,11 +100,11 @@ if(isset($_POST['submit'])){
               </div>
 
               <div class="col-6">
-                <input type="tel" placeholder="رقم الهاتف" name="tel" class="mt-3 mb-1" id="tel">
+                <input type="tel" placeholder="رقم الهاتف" name="telephone" class="mt-3 mb-1" id="tel">
                 <small class="text-danger" id="telMessage"></small>
               </div>
               
-              <div class="col-6 mb-3">
+              <div class="col-6 ">
               <select name="ville" class="select mt-3" id="ville" style="width : 190px">
     
                     <option selected="selected" value="0">-اختر العمالة أو الإقليم-</option>
@@ -196,7 +196,7 @@ if(isset($_POST['submit'])){
               <small class="mb-1 text-danger" id="villeMessage"></small>
               </div>
               
-              <div class="col-6 mb-3">
+              <div class="col-6 ">
               <select name="role" class="select mt-3" id="role" style="width : 190px">
                    <option selected="selected" value="0">-اختر نوع الحساب-</option>
                    <option value="1">عميل</option>
@@ -206,11 +206,14 @@ if(isset($_POST['submit'])){
               <small class="mb-1 text-danger" id="roleMessage"></small>
               </div>
 
-            <!-- <div>
-              <button type="button" class="btn btn-primary m-1 float-start" id="suivant" style="display: block;" onclick="next()">
-                  التالي
-              </button>
-            </div> -->
+              <div class="col-6 mb-3">
+              <select name="sexe" class="select mt-3" id="sexe" style="width : 190px">
+                   <option selected="selected" value="0">-الجنس-</option>
+                   <option value="1">ذكر</option>
+                   <option value="2">أنثى</option>
+              </select>
+              <small class="mb-1 text-danger" id="sexeMessage"></small>
+              </div>
             
             </div>
 
@@ -235,17 +238,17 @@ if(isset($_POST['submit'])){
               <div style="display : none;" id="signup3" class="m-auto p-3"> 
 
               <div class="py-1 ">
-              <input type="text" placeholder="البريد الالكتروني"name="mail" class="mb-1 text-secondary" id="usmail">
+              <input type="text" placeholder="البريد الالكتروني"name="usmail" class="mb-1 text-secondary" id="usmail">
               <small class="mb-3 text-danger" id="mailMessage"></small>
               </div>
 
               <div class="py-1 ">
-              <input type="text" placeholder="كلمة السر" class="mb-1 text-secondary " id="pass"></br>
+              <input type="password" name="password" placeholder="كلمة السر" class="mb-1 text-secondary " id="pass"></br>
               <small class="mb-3 text-danger" id="passMessage"></small>
               </div>
              
               <div class="py-1 ">
-              <input type="text" placeholder="أعد كلمة السر" class="mb-1 text-secondary"  id="copass"></br>
+              <input type="password" placeholder="أعد كلمة السر" class="mb-1 text-secondary"  id="copass"></br>
               <small class="mb-3 text-danger" id="copassMessage"></small>
               </div>
                 
