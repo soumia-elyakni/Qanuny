@@ -5,18 +5,26 @@ $users =$data-> getAllPUsers();
 // print_r($users);
 ?>
 
-<h2 class="text-info text-center mb-5" style="margin-top :100px;">Les nouveaux demandes d'inscription Juriste</h2>
+<?php
+include_once 'includes/sidebar.php';
+?>
+
+
+<main style="position: absolute; z-index: 20; width: calc(100% - 270px); top: 62px; right : 270px;">
+<h2 class="text-info text-center mb-5" style="margin-top :100px;">لائحة الطلبات الجديدة</h2>
 <?php foreach($users as $user): ?>
-<div class="card w-75 mx-auto" style="direction: rtl;">
+<div class="card w-75 mx-auto my-2" style="direction: rtl;">
   <div class="card-body">
     <h5 class="card-title"><?= $user['nom']?>  <?= $user['prenom']?></h5>
     <h6><?= $user['role']?></h6>
-    <div>
-    <img src="./uploads/<?= $user['cinPhoto']?>" alt="cin" class="w-50" >
-    <img src="./uploads/<?= $user['cipPhoto']?>" alt="cip" class="w-50">
+    <div class="row d-flex p-2">
+    <img src="./uploads/<?= $user['cinPhoto']?>" alt="cin" class="col-6 w-50" >
+    <img src="./uploads/<?= $user['cipPhoto']?>" alt="cip" class="col-6 w-50">
     </div>
-    <a href="#" class="btn btn-success float-end">Accepter</a>
-    <a href="#" class="btn btn-warning text-light me-2 float-end">Refuser</a>
+    <a href="#" class="btn btn-primary text-light float-end">Accepter</a>
+    <a href="#" class="btn btn-secondary text-light me-2 float-end">Refuser</a>
   </div>
 </div>
 <?php endforeach;?>
+
+</main>
