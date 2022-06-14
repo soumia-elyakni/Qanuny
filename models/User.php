@@ -9,16 +9,29 @@ class user{
         
     }
 
+    static public function getOneUser ($data) {
+        $id =  $data [ 'id'];
+        try{
+        $query = 'SELECT * FROM users WHERE id = :id';
+        $stmt = DB::connect () ->prepare ($query);
+        $stmt->execute (array (" : id" => $id));
+        $employe = $stmt->fetch("PDO::FETCH_0BJ");
+        return $employe;
+        } catch (PDOException $ex){
+        echo 'erreur' .$ex->getMessage;
+        }
+        }
+
     static public function add($data){
 
         $data['pass'] = md5($data['pass']) ;
-        $stmt = DB::connect()->prepare('INSERT INTO users (nom, prenom, cin, sexe, telephone, ville, role, mail, pass ) VALUES (:nom, :prenom, :cin, :sexe, :tel, :ville, :role, :mail, :pass)');
+        $stmt = DB::connect()->prepare('INSERT INTO users (nom, prenom, cin, sexe, telephone, ville, role, mail, pass ) VALUES (:nom, :prenom, :cin, :sexe, :telephone, :ville, :role, :mail, :pass)');
 
         $stmt->bindParam(':nom', $data['nom']);
         $stmt->bindParam(':prenom', $data['prenom']);
         $stmt->bindParam(':cin', $data['cin']);
         $stmt->bindParam(':sexe', $data['sexe']);
-        $stmt->bindParam(':tel', $data['telephone']);
+        $stmt->bindParam(':telephone', $data['telephone']);
         $stmt->bindParam(':ville', $data['ville']);
         $stmt->bindParam(':role', $data['role']);
         $stmt->bindParam(':mail', $data['mail']);
@@ -27,13 +40,11 @@ class user{
         $stmt->execute();
         
 
-
-
-        if($stmt->execute()){
-            return 'ok';
-        } else {
-            return 'error';
-        }
+        // if($stmt->execute()){
+        //     return 'ok';
+        // } else {
+        //     return 'error';
+        // }
         $stmt = null;
 
         
