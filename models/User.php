@@ -9,16 +9,16 @@ class user{
         
     }
 
-    static public function getOneUser ($data) {
+    static public function getUser ($data) {
         $id =  $data [ 'id'];
         try{
         $query = 'SELECT * FROM users WHERE id = :id';
         $stmt = DB::connect () ->prepare ($query);
         $stmt->execute (array (" : id" => $id));
-        $employe = $stmt->fetch("PDO::FETCH_0BJ");
-        return $employe;
+        $user = $stmt->fetch(PDO::FETCH_OBJ);
+        return $user;
         } catch (PDOException $ex){
-        echo 'erreur' .$ex->getMessage;
+        echo 'erreur' .$ex->getMessage();
         }
         }
 
@@ -74,5 +74,25 @@ class user{
 
 
     // }
-}
+
+    static public function delete($data){
+        $id = $data['id'];
+            try{
+                $query = 'DELETE FROM users WHERE id = :id';
+                $stmt = DB::connect () ->prepare ($query);
+                $stmt->execute (array (":id" => $id));
+                $user = $stmt->fetch(PDO::FETCH_OBJ);
+                return $user;
+                $stmt->execute();
+
+                } catch (PDOException $ex){
+                echo 'erreur' .$ex->getMessage();
+                }
+              
+        }
+
+
+
+    }
+
 ?>

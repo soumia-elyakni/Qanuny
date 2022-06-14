@@ -28,7 +28,8 @@ class UserControllers {
 
             
             if($result === "ok "){
-                header('location: .BASE_URL');
+                Session::set('success', 'User Ajouté');
+                Redirect::to('home');
             }else{
             echo $result;
         }
@@ -37,6 +38,29 @@ class UserControllers {
 
    
 }
+
+        public function getOneUSer(){
+            if(isset($_POST['id'])){
+                $data= [
+                    'id'=> $_POST['id'],
+                ];
+                $user = User::getUser($data);
+            }
+            
+        }
+
+
+        public function deleteUser(){
+            if(isset($_POST['id'])){
+                $data['id'] = $_POST['id'];
+                $result = User::delete($data);
+                // if($result === 'ok')
+                // {
+                //     Redirect::to('Tableau');
+                // }
+            }
+        }
+
 }
 
 ?>
