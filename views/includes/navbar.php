@@ -1,9 +1,4 @@
-<?php
-if(isset($_POST['submit'])){
-  $newUser = new UserControllers();
-  $newUser-> addUser();
-}
-?>
+
 
 <link rel="stylesheet" href="public/css/navbar.css">
 <header class="header" style="direction : rtl;">
@@ -45,7 +40,7 @@ if(isset($_POST['submit'])){
 
                      <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                    </div>
-                   <form class="modal-body" action="" méthode="POST" id="loginform">
+                   <form class="modal-body" action="" method="POST" id="loginform">
 
                         <input type="text" placeholder="البريد الالكتروني للمستخدم" class="mb-1 text-secondary bg-light" id="usermail" style="border : none; border-bottom: grey solid 1px ;"></br>
                         <span class="" id="usmailMessage">5</span></br>
@@ -79,7 +74,7 @@ if(isset($_POST['submit'])){
             </div>
 
 
-          <form  method="POST" id="fullsignup" >
+          <form action="addUser" method="POST"  id="fullsignup" enctype="multipart/form-data">
             <div class="modal-body">
 
             <div   class="row  justify-between m-auto"  id="signup1" >
@@ -108,89 +103,89 @@ if(isset($_POST['submit'])){
               <select name="ville" class="select mt-3" id="ville" style="width : 190px">
     
                     <option selected="selected" value="0">-اختر العمالة أو الإقليم-</option>
-                    <option value="31">أكادير إدا وتنان</option>
-                    <option value="1704">عين الشق</option>
-                    <option value="1717">عين السبع الحي المحمدي</option>
-                    <option value="1716">الفداء مرس السلطان</option>
-                    <option value="61">الحوز</option>
-                    <option value="38">الحسيمة</option>
-                    <option value="71">أوسرد</option>
-                    <option value="50">أسا - الزاك</option>
-                    <option value="42">أزيلال</option>
-                    <option value="1706">ابن مسيك</option>
-                    <option value="41">بني ملال</option>
-                    <option value="82">بنسليمان</option>
-                    <option value="74">بركان</option>
-                    <option value="2040">برشيد</option>
-                    <option value="56">بوجدور</option>
-                    <option value="47">بولمان</option>
-                    <option value="1702">الدار البيضاء</option>
-                    <option value="1715">الدار البيضاء أنفا</option>
-                    <option value="87">شفشاون</option>
-                    <option value="60">شيشاوة</option>
-                    <option value="33">اشتوكة ايت باها</option>
-                    <option value="2037">الدريوش</option>
-                    <option value="66">الحاجب</option>
-                    <option value="79">الجديدة</option>
-                    <option value="62">قلعة السراغنة</option>
-                    <option value="2038">اليوسفية</option>
-                    <option value="69">الرشيدية</option>
-                    <option value="51">السمارة</option>
-                    <option value="63">الصويرة</option>
-                    <option value="1714">الفحص- أنجرة</option>
-                    <option value="1708">فاس</option>
-                    <option value="76">فجيج</option>
-                    <option value="2031">الفقيه بنصالح</option>
-                    <option value="48">كلميم</option>
-                    <option value="2030">جرسيف</option>
-                    <option value="1703">الحي الحسني</option>
-                    <option value="67">ايفران</option>
-                    <option value="32">إنزكان أيت ملول</option>
-                    <option value="73">جرادة</option>
-                    <option value="53">القنيطرة</option>
-                    <option value="21">الخميسات</option>
-                    <option value="68">خنيفرة</option>
-                    <option value="81">خريبكة</option>
-                    <option value="55">العيون</option>
-                    <option value="86">العرائش</option>
-                    <option value="1792">المضيق - الفنيدق</option>
-                    <option value="1711">مراكش</option>
-                    <option value="1712">مديونة</option>
-                    <option value="1713">مكناس</option>
-                    <option value="2036">ميدلت</option>
-                    <option value="30">المحمدية</option>
-                    <option value="1707">مولاي رشيد</option>
-                    <option value="1710">مولاي يعقوب</option>
-                    <option value="77">الناضور</option>
-                    <option value="1709">النواصر</option>
-                    <option value="36">ورزازات</option>
-                    <option value="70">وادي الذهب</option>
-                    <option value="2033">وزان</option>
-                    <option value="72">وجدة-انجاد</option>
-                    <option value="17">الرباط</option>
-                    <option value="2035">الرحامنة</option>
-                    <option value="78">أسفي</option>
-                    <option value="1701">سلا</option>
-                    <option value="46">صفرو</option>
-                    <option value="80">سطات</option>
-                    <option value="2039">سيدي بنور</option>
-                    <option value="1705">سيدي البرنوصي</option>
-                    <option value="2028">سيدي إفني</option>
-                    <option value="54">سيدي قاسم</option>
-                    <option value="2032">سيدي سليمان</option>
-                    <option value="20">الصخيرات تمارة</option>
-                    <option value="52">طانطان</option>
-                    <option value="83">طنجة-اصيلة</option>
-                    <option value="40">تاونات</option>
-                    <option value="75">تاوريرت</option>
-                    <option value="2034">طرفاية</option>
-                    <option value="34">تارودانت</option>
-                    <option value="49">طاطا</option>
-                    <option value="39">تازة</option>
-                    <option value="85">تطوان</option>
-                    <option value="2029">تنغير</option>
-                    <option value="35">تيزنيت</option>
-                    <option value="37">زاكورة</option>
+                    <option value="أكادير إدا وتنان">أكادير إدا وتنان</option>
+                    <option value="عين الشق">عين الشق</option>
+                    <option value="عين السبع الحي المحمدي">عين السبع الحي المحمدي</option>
+                    <option value="الفداء مرس السلطان">الفداء مرس السلطان</option>
+                    <option value="الحوز">الحوز</option>
+                    <option value="الحسيمة">الحسيمة</option>
+                    <option value="أوسرد">أوسرد</option>
+                    <option value="أسا-الزاك">أسا - الزاك</option>
+                    <option value="أزيلال">أزيلال</option>
+                    <option value="ابن مسيك">ابن مسيك</option>
+                    <option value="بني ملال">بني ملال</option>
+                    <option value="بنسليمان">بنسليمان</option>
+                    <option value="بركان">بركان</option>
+                    <option value="برشيد">برشيد</option>
+                    <option value="بوجدور">بوجدور</option>
+                    <option value="بولمان">بولمان</option>
+                    <option value="الدار البيضاء">الدار البيضاء</option>
+                    <option value="الدار البيضاء أنفا">الدار البيضاء أنفا</option>
+                    <option value="شفشاون">شفشاون</option>
+                    <option value="شيشاوة">شيشاوة</option>
+                    <option value="اشتوكة ايت باها">اشتوكة ايت باها</option>
+                    <option value="الدريوش">الدريوش</option>
+                    <option value="الحاجب">الحاجب</option>
+                    <option value="الجديدة">الجديدة</option>
+                    <option value="قلعة السراغنة">قلعة السراغنة</option>
+                    <option value="اليوسفية">اليوسفية</option>
+                    <option value="الرشيدية">الرشيدية</option>
+                    <option value="السمارة">السمارة</option>
+                    <option value="الصويرة">الصويرة</option>
+                    <option value="الفحص- أنجرة">الفحص- أنجرة</option>
+                    <option value="فاس">فاس</option>
+                    <option value="فجيج">فجيج</option>
+                    <option value="الفقيه بنصالح">الفقيه بنصالح</option>
+                    <option value="كلميم">كلميم</option>
+                    <option value="جرسيف">جرسيف</option>
+                    <option value="الحي الحسني">الحي الحسني</option>
+                    <option value="ايفران">ايفران</option>
+                    <option value="إنزكان أيت ملول">إنزكان أيت ملول</option>
+                    <option value="جرادة">جرادة</option>
+                    <option value="القنيطرة">القنيطرة</option>
+                    <option value="الخميسات">الخميسات</option>
+                    <option value="خنيفرة">خنيفرة</option>
+                    <option value="خريبكة">خريبكة</option>
+                    <option value="العيون">العيون</option>
+                    <option value="العرائش">العرائش</option>
+                    <option value="المضيق - الفنيدق">المضيق - الفنيدق</option>
+                    <option value="مراكش">مراكش</option>
+                    <option value="مديونة">مديونة</option>
+                    <option value="مكناس">مكناس</option>
+                    <option value="ميدلت">ميدلت</option>
+                    <option value="المحمدية">المحمدية</option>
+                    <option value="مولاي رشيد">مولاي رشيد</option>
+                    <option value="مولاي يعقوب">مولاي يعقوب</option>
+                    <option value="الناضور">الناضور</option>
+                    <option value="النواصر">النواصر</option>
+                    <option value="ورزازات">ورزازات</option>
+                    <option value="وادي الذهب">وادي الذهب</option>
+                    <option value="وزان">وزان</option>
+                    <option value="وجدة-انجاد">وجدة-انجاد</option>
+                    <option value="الرباط">الرباط</option>
+                    <option value="الرحامنة">الرحامنة</option>
+                    <option value="أسفي">أسفي</option>
+                    <option value="سلا">سلا</option>
+                    <option value="صفرو">صفرو</option>
+                    <option value="سطات">سطات</option>
+                    <option value="سيدي بنور">سيدي بنور</option>
+                    <option value="سيدي البرنوصي">سيدي البرنوصي</option>
+                    <option value="سيدي إفني">سيدي إفني</option>
+                    <option value="سيدي قاسم">سيدي قاسم</option>
+                    <option value="يدي سليمان">سيدي سليمان</option>
+                    <option value="الصخيرات تمارة">الصخيرات تمارة</option>
+                    <option value="طانطان">طانطان</option>
+                    <option value="طنجة-اصيلة">طنجة-اصيلة</option>
+                    <option value="تاونات">تاونات</option>
+                    <option value="تاوريرت">تاوريرت</option>
+                    <option value="طرفاية">طرفاية</option>
+                    <option value="تارودانت">تارودانت</option>
+                    <option value="طاطا">طاطا</option>
+                    <option value="تازة">تازة</option>
+                    <option value="تطوان">تطوان</option>
+                    <option value="تنغير">تنغير</option>
+                    <option value="تيزنيت">تيزنيت</option>
+                    <option value="زاكورة">زاكورة</option>
     
             	</select>
               <small class="mb-1 text-danger" id="villeMessage"></small>
@@ -199,9 +194,9 @@ if(isset($_POST['submit'])){
               <div class="col-6 ">
               <select name="role" class="select mt-3" id="role" style="width : 190px">
                    <option selected="selected" value="0">-اختر نوع الحساب-</option>
-                   <option value="1">عميل</option>
-                   <option value="2">محام</option>
-                   <option value="3">موثق</option>
+                   <option value="عميل">عميل</option>
+                   <option value="محام">محام</option>
+                   <option value="موثق">موثق</option>
               </select>
               <small class="mb-1 text-danger" id="roleMessage"></small>
               </div>
@@ -220,14 +215,14 @@ if(isset($_POST['submit'])){
               <div style="display: none;" id="signup2" class="m-auto p-3">
 
               <div class="col-6 mb-3 text-dark">
-              <label for="cinphoto" class="text-dark">انزل صورتك الشخصية رفقة بطاقتك الوطنية</label>
-              <input type="file" filetype=".jpg|.jpeg|.png|.pdf" name="cinphoto" id="cinphoto">
+              <label for="cinPhoto" class="text-dark">انزل صورتك الشخصية رفقة بطاقتك الوطنية</label>
+              <input type="file" filetype=".jpg|.jpeg|.png|.pdf" name="cinPhoto" id="cinphoto">
               <small class="mb-3 text-danger" id="pCinMessage"></small>
               </div>
               
               <div class="col-6 mt-3 text-dark"> 
-              <label for="cinphoto" class="text-dark">انزل صورة بطاقة الرخصة المهنية</label>
-              <input type="file" filetype=".jpg|.jpeg|.png|.pdf" name="cipphoto" id="cipphoto" >
+              <label for="cipPhoto" class="text-dark">انزل صورة بطاقة الرخصة المهنية</label>
+              <input type="file" filetype=".jpg|.jpeg|.png|.pdf" name="cipPhoto" id="cipphoto" >
               <small class="mb-3 text-danger" id="pCipMessage"></small> 
               </div>
 

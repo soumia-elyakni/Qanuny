@@ -53,10 +53,10 @@
 
     
     role.addEventListener("click", (e) => {
-        if (e.target.value == "1") {
+        if (e.target.value == "عميل") {
             signup3.style.display = "block";
             signup2.style.display = "none";
-        }else if ((e.target.value == "2")||(e.target.value == "3")) {
+        }else if ((e.target.value == "محام")||(e.target.value == "موثق")) {
             signup2.style.display = "block";
             signup3.style.display = "block";
         }
