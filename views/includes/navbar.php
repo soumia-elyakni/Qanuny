@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="public/css/navbar.css">
 <header class="header" style="direction : rtl;">
      
-      <nav class="navbar rtl navbar navbar-expand-lg fixed-top bg-light">
+      <nav class="navbar rtl navbar navbar-expand-lg fixed-top bg-transparent">
         <div class="container-fluid">
           <a class="navbar-brand fs-3" href="home">القانوني</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -264,6 +264,6 @@
       
          
     
-      <script src="./public/js/navbar.js"></script>
+      <script src="./public/js/navbar.js" defer></script>
       <script src="./public/js/formInscriptionuser.js"></script>
       <script src="./public/js/formValidateLogin.js"></script>
