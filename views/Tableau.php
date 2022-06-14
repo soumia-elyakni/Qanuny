@@ -52,7 +52,7 @@ include_once 'includes/sidebar.php';
                                 <td scope="col"><?= $user['role']?></td>
                                 <td scope="col"><?= $user['ville']?></td>
                                 <td scope="col" colspan="2">
-                                        <form method="post" class="mr-1" action="deleteUser">
+                                        <form method="POST" class="mr-1" action="deleteUser">
                                             <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
                                             <button type="submit" name="delete" class="border border-0">
                                                 <i class="far fa-trash text-danger"></i>
