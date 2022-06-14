@@ -1,5 +1,9 @@
 
+let header = document.querySelector('.navbar');
 window.addEventListener('scroll',function(){
-    let header = document.querySelector('header');
-    header.classList.toggle('scrolling-active');
+    if(window.scrollY > 30) {
+        header.classList.add('scrolling-active')
+    } else {
+        header.classList.remove('scrolling-active')
+    }
 })
