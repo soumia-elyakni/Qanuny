@@ -14,7 +14,7 @@ function autoload($class_name)
 {
     $paths = [
         'controllers/',
-        'app/classes',
+        'app/classes/',
         'database/',
         'models/',
         'public/'
