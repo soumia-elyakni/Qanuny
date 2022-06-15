@@ -4,7 +4,7 @@
   // Redirect::to('home');
 ?>
 
-<?php if( $data['role'] == "عميل"){ ?>
+<?php if( $_POST['role'] == "عميل"){ ?>
 
 <div class="container-fluid border border-success position-absolute top-50 mx-auto  translate-middle w-50 " >
   <div class="card-header bg-transparent border-success"><h5 class="card-title">مبروك</h5></div>
