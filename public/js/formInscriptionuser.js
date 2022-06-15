@@ -1,6 +1,6 @@
 //Regex'S
     var FregexName = /^[a-zA-Z- ---]{3,}$/i ;
-    var AregexName = /^[ا-ي- ---أ-إ-]{2,}$/i ;
+    var AregexName = /^[أ-ي -- ئ ؤ ء]{2,}$/i ;
     var Ncinregex = /^[a-zA-Z][0-9a-zA-Z][0-9]*$/i ;
     var Telregex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/ ;
     var Mailregex = /^[a-zA-Z0-9._-]+[@]+[\w]+[.]+(com|ma|org|io|fr|uk)$/ ;
