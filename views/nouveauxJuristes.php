@@ -25,7 +25,12 @@ include_once 'includes/sidebar.php';
       <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
       <button class="btn btn-primary text-light float-end">Accepter</button>
     </form>
-    <a href="#" class="btn btn-secondary text-light me-2 float-end">Refuser</a>
+    <form method="POST" action="deleteAddJuriste">
+      <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+      <button class="btn btn-secondary text-light me-2 float-end">Refuser</button>
+    </form>
+
+    
   </div>
 </div>
 <?php endforeach;?>

@@ -6,9 +6,13 @@ if(isset($_POST['id'])) {
     $PreUser = new PreUserControllers();
     $data = $PreUser-> getOnePreUSer($id);
     $user = new UserControllers();
-    $user-> confirmUser($data);
+
+    if($user -> confirmUser($data)){
+
+        $PreUser-> deletePreUser($id); 
+    }
     
-    $delete = $PreUser-> deletePreUser(); 
+   
 
 }
 
