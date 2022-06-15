@@ -27,9 +27,10 @@ class UserControllers {
             }
 
             
-            if($result === "ok "){
-                Session::set('success', 'User Ajouté');
+            if($result === "ok"){
+                // Session::set('success', 'User Ajouté');
                 Redirect::to('home');
+                // header('location:home');
             }else{
             echo $result;
         }
@@ -49,15 +50,28 @@ class UserControllers {
             
         }
 
+        public function confirmUser($data){
+
+            $result = User::confirm($data);
+            print_r($result);
+            die();
+            if($result === "ok"){
+                return 'yet';
+            } else {
+                return 'not yet';
+            }
+        }
+
 
         public function deleteUser(){
             if(isset($_POST['id'])){
                 $data['id'] = $_POST['id'];
                 $result = User::delete($data);
-                // if($result === 'ok')
-                // {
-                //     Redirect::to('Tableau');
-                // }
+                if($result === 'ok')
+                {
+                    Redirect::to('Tableau');
+                    // header('location:Tableau');
+                }
             }
         }
 

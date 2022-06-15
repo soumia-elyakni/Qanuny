@@ -40,7 +40,7 @@
 
                      <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                    </div>
-                   <form class="modal-body" action="" method="POST" id="loginform">
+                   <form class="modal-body"  method="POST" id="loginform">
 
                         <input type="text" placeholder="البريد الالكتروني للمستخدم" class="mb-1 text-secondary bg-light" id="usermail" style="border : none; border-bottom: grey solid 1px ;"></br>
                         <span class="" id="usmailMessage">5</span></br>

@@ -13,7 +13,7 @@
             </li>
             <li class="text-center">
                 <img class="rounded-circle w-50 " src="">
-                <h3 class="text-dark ">Selya</h3>
+                <h3 class="text-light">Selya</h3>
                     <!-- <?php // echo $_SESSION['name']?> -->
                 <p class="text-info ">Admin</p>
             </li>

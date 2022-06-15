@@ -47,5 +47,35 @@ class preUser{
         
 }
 
+    static public function getUser ($id) {
+        try{
+        $query = 'SELECT * FROM juristedemande WHERE id = :id';
+        $stmt = DB::connect () ->prepare ($query);
+        $stmt->execute (array (":id" => $id));
+        $user = $stmt->fetch(PDO::FETCH_OBJ);
+        return $user;
+        } catch (PDOException $ex){
+        echo 'erreur' .$ex->getMessage();
+    }
+}
+
+    static public function delete($data){
+        $id = $data['id'];
+         try{
+            $query = 'DELETE FROM juristedemande WHERE id = :id';
+            $stmt = DB::connect () ->prepare ($query);
+            $stmt->execute (array (":id" => $id));
+            $user = $stmt->fetch(PDO::FETCH_OBJ);
+            return $user;
+            $stmt->execute();
+
+            if($stmt->execute()){
+                return "ok";
+            }
+            } catch (PDOException $ex){
+            echo 'erreur' .$ex->getMessage();
+            }
+          
+    }
 }
 ?>

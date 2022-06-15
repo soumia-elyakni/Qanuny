@@ -11,19 +11,25 @@ include_once 'includes/sidebar.php';
 <main class="" style="position: absolute; z-index: 20; width: calc(100% - 270px); top: 62px; right : 270px;">
                 <!--avanttable-->
 
-      <section class="nav_bar d-flex align-items-center px-3" style=" margin-top : 40px; direction:ltr;">
-            <h2 class="tabtitle col-12 align-self-center mt-1 text-center mb-3">لائحة المستخدمين</h2> 
-            <div class="col-3 align-self-center d-flex">
-              <button style="border: transparent; background: transparent; align-self: center;"> 
-                 <img src="">
-              </button>
+      <section class=" d-flex align-items-center px-3 justify-content-between" style=" margin-top : 40px; direction:rtl;">
+      
 
-             </div>
+        <h2 class="tabtitle col-6 align-self-center mt-1 text-end mb-3">لائحة المستخدمين</h2> 
+        
+        <select name="role" class="select mt-3 float-start" id="role" style="width : 190px">
+               <option selected="selected" value="0">-اختر نوع الحساب-</option>
+               <option value="عميل">عميل</option>
+               <option value="محام">محام</option>
+               <option value="موثق">موثق</option>
+        </select>
+
+       
+
       </section>
 
                    <!--table-->
           
-      <div class="container " style="direction:rtl; margin-top: 100px;">
+      <div class="container " style="direction:rtl; margin-top: 30px;">
           <div class="row">
               <div class="col-md-12 mx-auto">
                   <div class="card">

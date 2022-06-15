@@ -21,7 +21,10 @@ include_once 'includes/sidebar.php';
     <img src="./uploads/<?= $user['cinPhoto']?>" alt="cin" class="col-6 w-50" >
     <img src="./uploads/<?= $user['cipPhoto']?>" alt="cip" class="col-6 w-50">
     </div>
-    <a href="#" class="btn btn-primary text-light float-end">Accepter</a>
+    <form method="POST" action="confirmUser">
+      <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+      <button class="btn btn-primary text-light float-end">Accepter</button>
+    </form>
     <a href="#" class="btn btn-secondary text-light me-2 float-end">Refuser</a>
   </div>
 </div>
