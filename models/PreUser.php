@@ -59,22 +59,21 @@ class preUser{
     }
 }
 
-    static public function delete($data){
-        $id = $data['id'];
+    static public function delete($id){
          try{
             $query = 'DELETE FROM juristedemande WHERE id = :id';
             $stmt = DB::connect () ->prepare ($query);
-            $stmt->execute (array (":id" => $id));
-            $user = $stmt->fetch(PDO::FETCH_OBJ);
-            return $user;
-            $stmt->execute();
+            $stmt->bindParam(':id', $id);
+            $stmt->execute ();
+            $stmt->fetch(PDO::FETCH_OBJ);
 
             if($stmt->execute()){
                 return "ok";
             }
-            } catch (PDOException $ex){
+        } catch (PDOException $ex){
             echo 'erreur' .$ex->getMessage();
-            }
+            die();
+        }
           
     }
 }

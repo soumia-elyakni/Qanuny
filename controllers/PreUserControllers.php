@@ -13,16 +13,13 @@ class PreUserControllers {
     
 }
 
-public function deletePreUser(){
-    if(isset($_POST['id'])){
-        $data['id'] = $_POST['id'];
-        $result = PreUser::delete($data);
+public function deletePreUser($id){
+        $result = PreUser::delete($id);
         if($result === 'ok')
         {
             Redirect::to('Tableau');
             // header('location:Tableau');
         }
-    }
 }
 
 }

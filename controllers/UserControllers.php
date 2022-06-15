@@ -51,12 +51,10 @@ class UserControllers {
         }
 
         public function confirmUser($data){
-
             $result = User::confirm($data);
-            print_r($result);
-            die();
+            
             if($result === "ok"){
-                return 'yet';
+                return true;
             } else {
                 return 'not yet';
             }
