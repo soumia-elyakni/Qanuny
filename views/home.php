@@ -1,8 +1,8 @@
  <?php
  
- if($_SESSION['admin'] = true){
-  Redirect::to('nouveauxJuristes');
- }
+//  if($_SESSION['admin'] = true){
+//   Redirect::to('nouveauxJuristes');
+//  }
  ?>
  
  <!DOCTYPE html>
