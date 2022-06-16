@@ -68,9 +68,34 @@ class UserControllers {
                 if($result === 'ok')
                 {
                     Redirect::to('Tableau');
-                    // header('location:Tableau');
+                    
                 }
             }
+        }
+
+        public function loginUser($mail, $password){
+
+            $user = User::login($mail,$password);
+
+            if($user){
+
+                $_SESSION['login'] = true;  
+                $_SESSION['id'] = $user['id'];  
+                $_SESSION['cin'] = $user['cin'];
+                $_SESSION['nom'] = $user['nom'];
+                $_SESSION['prenom'] = $user['prenom'];
+                $_SESSION['mail'] = $user['mail'];
+                $_SESSION['role'] = $user['role'];
+
+                if($_SESSION['role'] == "عميل"){
+                    Redirect::to('jurirteListe');
+                } else {
+                    Redirect::to('demande');
+                }
+            }
+
+           
+
         }
 
 }
