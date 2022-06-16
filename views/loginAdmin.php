@@ -1,14 +1,14 @@
 
 <?php 
 
-    if ($_SESSION['admin'] = true){
-        Redirect::to('nouveauxJuristes');
-    }
+    // if ($_SESSION['admin'] = true){
+    //     Redirect::to('nouveauxJuristes');
+    // }
     
 	if(isset($_POST['submit'])){
         
 		$loginAdmin = new AdminControllers();
-		$loginAdmin->adminAuth($_POST['adminame']);
+		$loginAdmin->adminAuth($_POST['adminame'],$_POST['password']);
        
 	}
 ?>
