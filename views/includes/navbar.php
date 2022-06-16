@@ -3,6 +3,8 @@
 <link rel="stylesheet" href="public/css/navbar.css">
 <header class="header" style="direction : rtl;">
      
+
+
       <nav class="navbar rtl navbar navbar-expand-lg fixed-top bg-transparent">
         <div class="container-fluid">
           <a class="navbar-brand fs-3" href="home">القانوني</a>
@@ -40,24 +42,23 @@
 
                      <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                    </div>
-                   <form class="modal-body"  method="POST" id="loginform">
+                   <form class="modal-body" action="loginUser"  method="POST" id="loginform">
 
-                        <input type="text" placeholder="البريد الالكتروني للمستخدم" class="mb-1 text-secondary bg-light" id="usermail" style="border : none; border-bottom: grey solid 1px ;"></br>
+                        <input type="text" name="mail" placeholder="البريد الالكتروني للمستخدم" class="mb-1 text-secondary bg-light" id="usermail" style="border : none; border-bottom: grey solid 1px ;"></br>
                         <span class="" id="usmailMessage">5</span></br>
 
-                        <input type="password" placeholder="كلمة السر" class="mt-3 text-secondary bg-light" id="userpass" style="border : none; border-bottom: grey solid 1px ;"></br>
+                        <input type="password" name="password" placeholder="كلمة السر" class="mt-3 text-secondary bg-light" id="userpass" style="border : none; border-bottom: grey solid 1px ;"></br>
                         <span class="mb-2" id="upassMessage">5</span></br>
                         <a href="#" class="" style="font-size: 13px ;">هل نسيت كلمة السر؟</a>
                         <div class="form-check form-switch w-25">
                           <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                           <label class="form-check-label text-dark " for="flexSwitchCheckDefault">تذكرني</label>
                         </div>
-
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">الغاء</button>
+                          <button type="submit" name="submit" class="btn btn-primary">الدخول</button>
+                        </div>
                    </form>
-                   <div class="modal-footer">
-                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">الغاء</button>
-                     <button type="button" class="btn btn-primary">الدخول</button>
-                   </div>
                  </div>
                </div>
              </div>
@@ -262,7 +263,9 @@
       </div>
     </div>
       
-         
+       <!-- <?php
+        // } else {
+         ?> <p>soumia</p> <?php  ?>   -->
     
       <script src="./public/js/navbar.js" defer></script>
       <script src="./public/js/formInscriptionuser.js"></script>
