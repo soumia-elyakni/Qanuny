@@ -1,4 +1,17 @@
 
+<?php 
+
+    if ($_SESSION['admin'] = true){
+        Redirect::to('nouveauxJuristes');
+    }
+    
+	if(isset($_POST['submit'])){
+        
+		$loginAdmin = new AdminControllers();
+		$loginAdmin->adminAuth($_POST['adminame']);
+       
+	}
+?>
     <title>Admin</title>
     <link rel="stylesheet" href="public/css/style.css">
     
@@ -12,9 +25,9 @@
                     <div class="card-header bg-primary text-white">
                         <h2>تسجيل الدخول</h2>
                     </div>
-
+                    <div class="text-danger"></div>
                     <div class="card-body">
-                        <form action="nouveauxJuristes" id="loginform" method="POST">
+                        <form  id="loginform" method="POST">
                             <div class="form-group row mb-3 d-md-block">
                                 
                                 <div class="col-sm-10">
@@ -30,7 +43,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-block float-start">الدخول</button>
+                                <button name="submit" type="submit" class="btn btn-primary btn-block float-start">الدخول</button>
                                 
                             </div>
                         </form>

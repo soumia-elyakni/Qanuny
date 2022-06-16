@@ -33,7 +33,7 @@
             </li>
 
             <li class="link mt-5 ps-3 rounded-3 ">
-                <a href="logouat.php">
+                <a href="logouat">
                     <small class="text-light">تسجيل الخروج</small>
                     <img class="ms-1" src="images/svg/logout.svg" alt="">
                 </a>

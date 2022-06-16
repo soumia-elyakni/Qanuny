@@ -1,8 +1,8 @@
 <?php
-class Session{
-    static public function set($type, $message){
-        setcookie($type, $message,time() + 90,"/");
-    }
-}
+// class Session{
+//     static public function set($type, $message){
+//         setcookie($type, $message,time() + 90,"/");
+//     }
+// }
 
 ?>

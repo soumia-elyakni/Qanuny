@@ -1,3 +1,10 @@
+ <?php
+ 
+ if($_SESSION['admin'] = true){
+  Redirect::to('nouveauxJuristes');
+ }
+ ?>
+ 
  <!DOCTYPE html>
  <html lang="en">
  <head>
