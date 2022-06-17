@@ -29,7 +29,7 @@ include_once 'includes/sidebar.php';
 
                    <!--table-->
           
-      <div class="container " style="direction:rtl; margin-top: 30px;">
+      <div class="container py-5" style="direction:rtl; margin-top: 30px;">
           <div class="row">
               <div class="col-md-12 mx-auto">
                   <div class="card">
