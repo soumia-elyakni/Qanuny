@@ -24,7 +24,7 @@ class user{
 
     static public function add($data){
 
-        $data['pass'] = md5($data['pass']) ;
+        $data['pass'] = $data['pass'] ;
         $stmt = DB::connect()->prepare('INSERT INTO users (nom, prenom, cin, sexe, telephone, ville, role, mail, pass ) VALUES (:nom, :prenom, :cin, :sexe, :telephone, :ville, :role, :mail, :pass)');
 
         $stmt->bindParam(':nom', $data['nom']);
@@ -117,18 +117,35 @@ class user{
               
         }
 
-    static public function login($mail, $password){
+        static public function login($data){
+            $mail = $data['mail'];
 
-        $password = md5($password);
-        $mail = $mail;
+            try {
+                $query = 'SELECT * FROM users WHERE mail=:mail'; 
+                $stmt = DB::connect()->prepare($query);
+                $stmt->execute(array(  
+					':mail'     =>     $mail,  
+				));
+                $user = $stmt->fetch(PDO::FETCH_OBJ);
+                return $user;
+            }catch(PDOException $ex){
+                echo 'erreur' . $ex->getMessage();
+            }
+        }
+    
 
-        $query = "SELECT * FROM users WHERE mail = '. $mail.'  AND pass = ' .$password'";
-        $stmt = DB::connect () ->prepare ($query);
-        $stmt-> execute();
-        $results = $stmt->fetchAll();        
-        return $results; 
+    // static public function login($mail, $password){
 
-    }
+    //     $password = md5($password);
+        
+
+    //     $query = "SELECT * FROM users WHERE mail = '. $mail.'  AND pass = ' .$password'";
+    //     $stmt = DB::connect () ->prepare ($query);
+    //     $stmt-> execute();
+    //     $user = $stmt->fetchAll();        
+    //     return $user; 
+       
+    // }
 
 
 
