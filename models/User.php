@@ -122,7 +122,7 @@ class user{
         $password = md5($password);
         $mail = $mail;
 
-        $query = 'SELECT * FROM users WHERE mail = $mail AND pass = $password';
+        $query = "SELECT * FROM users WHERE mail = '. $mail.'  AND pass = ' .$password'";
         $stmt = DB::connect () ->prepare ($query);
         $stmt-> execute();
         $results = $stmt->fetchAll();        
