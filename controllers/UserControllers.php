@@ -29,8 +29,7 @@ class UserControllers {
             
             if($result === "ok"){
                 // Session::set('success', 'User Ajouté');
-                Redirect::to('home');
-                // header('location:home');
+              
             }else{
             echo $result;
         }
@@ -90,7 +89,7 @@ class UserControllers {
                 if($_SESSION['role'] == "عميل"){
                     Redirect::to('jurirteListe');
                 } else {
-                    Redirect::to('demande');
+                    Redirect::to('demandes');
                 }
             }
 
