@@ -72,31 +72,58 @@ class UserControllers {
             }
         }
 
-        public function loginUser($mail, $password){
+        public function loginUser(){
 
-            $user = User::login($mail,$password);
+                if(isset($_POST['login'])){
+                    $data = array(
+                        'mail'=>$_POST['mail'],
+                        'pass'=>$_POST['pass'],
 
-            if($user){
+                    );
+                    $user= User::login($data);
+                    
+                    if($user->mail === $_POST['mail'] && $user->pass === $_POST['pass']){
+                        
+                        $_SESSION['logged'] = true;                        
+                        $_SESSION['mail'] =$user->mail;
+                        $_SESSION['id'] = $user->id;
+                        $_SESSION['nom'] = $user->nom;
+                        $_SESSION['prenom'] = $user->prenom;
+                        $_SESSION['role'] = $user->role;
 
-                $_SESSION['login'] = true;  
-                $_SESSION['id'] = $user['id'];  
-                $_SESSION['cin'] = $user['cin'];
-                $_SESSION['nom'] = $user['nom'];
-                $_SESSION['prenom'] = $user['prenom'];
-                $_SESSION['mail'] = $user['mail'];
-                $_SESSION['role'] = $user['role'];
 
-                if($_SESSION['role'] == "عميل"){
-                    Redirect::to('jurirteListe');
-                } else {
-                    Redirect::to('demandes');
+                        if ($user->role === 'عميل') {
+                            $_SESSION['role'] = 'عميل';
+                            Redirect::to('juristeListe');
+
+                        }else if($user->role === 'محام'){
+                            $_SESSION['role'] = 'محام';
+                            Redirect::to('demandes');
+                            
+                        } else {
+                            $_SESSION['role'] = 'موثق';
+                            Redirect::to('demandes');
+                        }
+                    }else{
+                        Redirect::to('home');
+                    }
                 }
             }
 
-           
 
+        public function logout(){
+		
+                session_unset();
+                session_destroy();
+                
+                Redirect::to('home');
+            }
+            
         }
+        
+    
+    
+   
 
-}
 
-?>
+
