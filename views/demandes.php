@@ -1,12 +1,5 @@
 <?php
-if (isset($_SESSION['login'])){
-    if($_SESSION['role']== "عميل"){
-        Redirect::to('juristeListe');
-    } 
-    } else {
-        Redirect::to('home');
-    }
-
+if (isset($_SESSION['logged']) && ($_SESSION['role'] === 'محام' || $_SESSION['role'] === 'موثق')){
 
 include_once 'includes/sidebar.php';
 ?>
@@ -31,7 +24,7 @@ include_once 'includes/sidebar.php';
   <div class="card-body">
     <h5 class="card-title">اجراءات الحصول على الحضانة</h5>
     <p class="card-text">لوريم ابسوم بننبتنتبلمنتلقهثتلقثهتلقهثتلقهتلقهخلاقهخلاقخلتتلتل</p>
-    <p class="card-text">لوريم ابسوم بننبتنتبلمنتلقهثتلقثهتلقهثتلقهتلقهخلاقهخلاقخلتتلتل</p>
+    <p class="card-text"><?= $_SESSION['mail']?></p>
 <div class=" d-flex float-start">  
 <form class="ms-1">
     <a href="#" class="btn btn-primary">القبول</a>
@@ -46,3 +39,6 @@ include_once 'includes/sidebar.php';
 
 
 </main>
+<?php }else {
+        Redirect::to('home');
+    }; ?>
