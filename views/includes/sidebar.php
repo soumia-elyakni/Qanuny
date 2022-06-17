@@ -82,7 +82,7 @@
                 </a>
             </li>
             <li class="link mt-3 ps-3 rounded-3 ">
-                <a href="détailRV">
+                <a href="rendezVous">
                     <img class="mx-auto" src="images/svg/cours.svg" alt="">
                     <small class="text-light">لائحة المواعيد</small>
                 </a>
