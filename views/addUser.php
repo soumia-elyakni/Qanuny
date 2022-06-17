@@ -4,6 +4,13 @@
   // Redirect::to('home');
 ?>
 
+<title>Added</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    
+</head>
+<body>
+<div class="back-img"></div>
+
 <?php if( $_POST['role'] == "عميل"){ ?>
 
 <div class="container-fluid border border-success position-absolute top-50 mx-auto  translate-middle w-50 " >
