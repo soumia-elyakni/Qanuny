@@ -1,9 +1,5 @@
-
-
 <link rel="stylesheet" href="public/css/navbar.css">
 <header class="header" style="direction : rtl;">
-     
-<?php  ?>
 
       <nav class="navbar rtl navbar navbar-expand-lg fixed-top bg-transparent">
         <div class="container-fluid">
