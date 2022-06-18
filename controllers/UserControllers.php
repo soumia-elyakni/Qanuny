@@ -83,7 +83,6 @@ class UserControllers {
                     $user= User::login($data);
                     
                     if($user->mail === $_POST['mail'] && $user->pass === $_POST['pass']){
-                        
                         $_SESSION['logged'] = true;                        
                         $_SESSION['mail'] =$user->mail;
                         $_SESSION['id'] = $user->id;
@@ -92,20 +91,24 @@ class UserControllers {
                         $_SESSION['role'] = $user->role;
 
 
-                        if ($user->role === 'عميل') {
+                        if ($user->role == 'عميل') {
                             $_SESSION['role'] = 'عميل';
                             Redirect::to('juristeListe');
+                            die();
 
-                        }else if($user->role === 'محام'){
+                        }else if($user->role == 'محام'){
                             $_SESSION['role'] = 'محام';
                             Redirect::to('demandes');
+                            die();
                             
                         } else {
                             $_SESSION['role'] = 'موثق';
                             Redirect::to('demandes');
+                            die();
                         }
                     }else{
                         Redirect::to('home');
+                        die();
                     }
                 }
             }
