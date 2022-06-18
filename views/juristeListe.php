@@ -1,9 +1,11 @@
 <?php
-
-if (isset($_SESSION['logged']) && ($_SESSION['role'] === 'عميل')) {
-
-  include_once 'includes/sidebar2.php';
+  if (!isset($_SESSION['logged']) && !($_SESSION['role'] == 'عميل')) {
+    Redirect::to('home');
+    die();
+  }
 ?>
+<?php include_once 'includes/sidebar2.php'; ?>
+  
   <main style="position: absolute; z-index: 20; width: calc(100% - 270px); top: 62px; right : 270px; padding: 20px;">
     <section class=" d-flex align-items-center px-3 justify-content-between" style=" margin-top : 40px; direction : rtl;">
       <h2 class="text-info text-center mb-5" style="margin-top :100px;">لائحة المحامين والموثقين</h2>
@@ -43,7 +45,3 @@ if (isset($_SESSION['logged']) && ($_SESSION['role'] === 'عميل')) {
     </div>
 
   </main>
-
-<?php } else {
-  Redirect::to('home');
-}  ?>
