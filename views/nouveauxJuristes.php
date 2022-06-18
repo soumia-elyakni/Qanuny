@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION['logged']) || !($_SESSION['role'] == "admin")){
+  Redirect::to('home');
+}
+
 $data = new PreUserControllers();
 $users = $data->getAllPUsers();
 // print_r($users);

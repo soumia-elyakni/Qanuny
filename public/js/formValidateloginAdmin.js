@@ -1,3 +1,5 @@
+var pseuRegex = /^[a-zA-Z0-9_-]{3,15}$/i ;
+
 const admiName = document.getElementById('adminame');
 const nameMessage = document.getElementById('unameMessage');
 const password = document.getElementById('password');
@@ -11,7 +13,10 @@ if(loginForm) {
 
         if (admiName.value == "") {
             e.preventDefault()
-            nameMessage.textContent = "اكتب اسم المستخدم";
+            nameMessage.textContent = " اكتب اسم المستخدم";
+            admiName.style.borderColor = "red";
+        } else if (!pseuRegex.test(admiName.value)) {
+            nameMessage.textContent = "اكتب اسم المستخدم صحيحة";
             admiName.style.borderColor = "red";
         } else {
             nameMessage.textContent = "";
@@ -21,7 +26,7 @@ if(loginForm) {
 
         if (password.value == "") {
             e.preventDefault()
-            passMessage.textContent = "Ce Champ est obligatoire";
+            passMessage.textContent = "اكتب كلمة السر";
             password.style.borderColor = "red";
     
         } else {

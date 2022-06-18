@@ -1,16 +1,18 @@
 
 <?php 
 
-    // if ($_SESSION['admin'] = true){
-    //     Redirect::to('nouveauxJuristes');
-    // }
+if(isset($_POST['submit'])){
     
-	if(isset($_POST['submit'])){
-        
-		$loginAdmin = new AdminControllers();
-		$loginAdmin->adminAuth($_POST['adminame'],$_POST['password']);
-       
-	}
+    $loginAdmin = new AdminControllers();
+    $loginAdmin->adminAuth($_POST['adminame'],$_POST['password']);
+   
+}
+
+    if(isset($_SESSION['logged'])){
+        // Redirect::to('nouveauxJuriste');
+        die();
+    }
+    
 ?>
     <title>Admin</title>
     <link rel="stylesheet" href="public/css/style.css">
@@ -31,14 +33,14 @@
                             <div class="form-group row mb-3 d-md-block">
                                 
                                 <div class="col-sm-10">
-                                    <input type="text" name="adminame" id="adminame" class="form-control" placeholder="اسم الادمن" />
+                                    <input type="text" name="adminame" id="adminame" class="form-control" placeholder="اسم الادمن" >
                                     <small class="text-danger" id="unameMessage"></small>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 
                                 <div class="col-sm-10">
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="كلمة السر" />
+                                    <input type="password" name="password" id="password" class="form-control" placeholder="كلمة السر" >
                                     <small class="text-danger" id="upassMessage"></small>
                                 </div>
                             </div>
