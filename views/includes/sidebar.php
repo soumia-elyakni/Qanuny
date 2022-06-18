@@ -14,7 +14,7 @@
 
         <li class="text-center">
             <img class="rounded-circle w-50 " src="">
-            <h3 class="text-light"><?= $_SESSION['User_name'] ?></h3>
+            <h3 class="text-light"><?= $_SESSION['nom'] ?></h3>
             <p class="text-info ">Admin</p>
         </li>
         <ul class="linklist d-flex flex-column justify-content-center align-items-center  p-1">
