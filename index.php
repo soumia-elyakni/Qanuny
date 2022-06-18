@@ -1,12 +1,8 @@
 <?php
-   
-   header('Clear-Site-Data: "cache", "cookies", "storage", "executionContexts"');
-   
-   require_once 'autoload.php';
-   require_once 'views/includes/navbar.php';
-
+ header('Clear-Site-Data: "cache", "cookies", "storage", "executionContexts"');
+    require_once 'autoload.php';
     $home = new HomeController();
-
+    
     $pages = ['home','loginAdmin', 'Tableau','nouveauxJuristes','juristeListe','demandes','rendezVous', 'addUser','deleteAddJuriste','deleteUser', 'confirmUser','loginUser','mesDemandes', 'logouat'];
 
     if(isset($_GET['page'])){
@@ -19,6 +15,7 @@
     }else{
         $home->index('home');
     }
+    require_once 'views/includes/navbar.php';
 ?>
 
 <?php
