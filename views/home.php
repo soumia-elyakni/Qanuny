@@ -1,15 +1,13 @@
  <?php
-  if (isset($_SESSION['logged']) && ($_SESSION['role'] === 'عميل')) {
-    Redirect::to('juristeListe');
+    if (isset($_SESSION['logged']) && ($_SESSION['role'] === 'عميل')) {
+      Redirect::to('juristeListe');
 
-  } else if (isset($_SESSION['logged']) && ($_SESSION['role'] === 'محام' || $_SESSION['role'] === 'موثق')) {
-    Redirect::to('demandes');
+    } else if (isset($_SESSION['logged']) && ($_SESSION['role'] === 'محام' || $_SESSION['role'] === 'موثق')) {
+      Redirect::to('demandes');
 
-  } else if (isset($_SESSION['logged']) && $_SESSION['role'] === 'admin') {
-    Redirect::to('nouveauxJuristes');
-    
-  } else {
-
+    } else if (isset($_SESSION['logged']) && $_SESSION['role'] === 'admin') {
+      Redirect::to('nouveauxJuristes'); 
+    }
   ?>
 
    <title>Al-Qanuny</title>
@@ -98,6 +96,3 @@
            </div>
        </section>
      </main>
-
-
-   <?php } ?>
