@@ -12,22 +12,22 @@
 
         <li class="text-center">
             <img class="rounded-circle w-50 " src="">
-            <h3 class="text-light"><?= $_SESSION['nom'] ?></h3>
+            <h3 class="text-light"><?= $_SESSION['nom'] ?>  <?= $_SESSION['prenom'] ?></h3>
             <p class="text-info "><?= $_SESSION['role'] ?></p>
         </li>
 
 
         <ul class="linklist d-flex flex-column justify-content-center align-items-center  p-1">
             <li class="link mt-3 ps-3 rounded-3 ">
-                <a href="juristeListe">
+                <a href="demandes">
                     <img class="mx-auto" src="images/svg/home.svg" alt="">
-                    <small class="text-light">لائحة المحامين والموثقين</small>
+                    <small class="text-light">طلبات العملاء</small>
                 </a>
             </li>
             <li class="link mt-3 ps-3 rounded-3 ">
-                <a href="mesDemandes">
+                <a href="rendezVous">
                     <img class="mx-auto" src="images/svg/cours.svg" alt="">
-                    <small class="text-light">تفاصيل الطلبات</small>
+                    <small class="text-light">لائحة المواعيد</small>
                 </a>
             </li>
 

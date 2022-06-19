@@ -12,7 +12,7 @@
 
         <li class="text-center">
             <img class="rounded-circle w-50 " src="">
-            <h3 class="text-light"><?= $_SESSION['nom'] ?></h3>
+            <h3 class="text-light"><?= $_SESSION['nom'] ?> <?= $_SESSION['prenom'] ?>  </h3>
             <p class="text-info "><?= $_SESSION['role'] ?></p>
         </li>
 
