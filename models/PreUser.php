@@ -11,7 +11,7 @@ class preUser{
 
     static public function add($data){
 
-        $data['pass'] = md5($data['pass']) ;
+        
         $stmt = DB::connect()->prepare('INSERT INTO juristedemande (nom, prenom, cin, sexe, telephone, ville, role, cinPhoto, cipPhoto, mail, pass ) VALUES (:nom, :prenom, :cin, :sexe, :telephone, :ville, :role, :cinPhoto, :cipPhoto, :mail, :pass)');
         $cin = $_FILES['cinPhoto'];
         $cip = $_FILES['cipPhoto'];
