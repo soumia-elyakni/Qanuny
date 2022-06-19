@@ -1,3 +1,6 @@
+<style>
+    *{direction: rtl;}
+</style>
 <?php
 //  header('Clear-Site-Data: "cache", "cookies", "storage", "executionContexts"');
     require_once 'autoload.php';
@@ -27,7 +30,12 @@
     }else{
         $home->index('home');
     }
-    require_once 'views/includes/navbar.php';
+
+    if(!(isset($_SESSION['logged']))){
+        require_once 'views/includes/navbar.php';
+    } else {
+        require_once 'views/includes/navbarlogged.php';
+    }
 ?>
 
 <?php
