@@ -88,6 +88,7 @@ class UserControllers {
                         $_SESSION['id'] = $user->id;
                         $_SESSION['nom'] = $user->nom;
                         $_SESSION['prenom'] = $user->prenom;
+                        $_SESSION['telephone'] = $user->telephone;
                         $_SESSION['role'] = $user->role;
 
 
