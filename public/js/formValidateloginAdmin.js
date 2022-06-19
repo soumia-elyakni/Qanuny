@@ -16,6 +16,7 @@ if(loginForm) {
             nameMessage.textContent = " اكتب اسم المستخدم";
             admiName.style.borderColor = "red";
         } else if (!pseuRegex.test(admiName.value)) {
+            e.preventDefault()
             nameMessage.textContent = "اكتب اسم المستخدم صحيحة";
             admiName.style.borderColor = "red";
         } else {

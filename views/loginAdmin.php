@@ -9,8 +9,8 @@ if(isset($_POST['submit'])){
 }
 
     if(isset($_SESSION['logged'])){
-        // Redirect::to('nouveauxJuriste');
-        die();
+        Redirect::to('nouveauxJuriste');
+        
     }
     
 ?>
