@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION['logged']) || !($_SESSION['role'] == "admin")){
+  Redirect::to('home');
+}
+
 $data = new UserControllers();
 $users =$data-> getAllUsers();
 // print_r($users);
