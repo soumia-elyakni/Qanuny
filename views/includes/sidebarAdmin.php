@@ -13,7 +13,7 @@
         </li>
 
         <li class="text-center">
-            <img class="rounded-circle w-50 " src="">
+            <img class="rounded-circle w-50 " src="public/image/mr_nobody_new.svg">
             <h3 class="text-light"><?= $_SESSION['nom'] ?></h3>
             <p class="text-info ">Admin</p>
         </li>
