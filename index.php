@@ -1,5 +1,5 @@
 <?php
- header('Clear-Site-Data: "cache", "cookies", "storage", "executionContexts"');
+//  header('Clear-Site-Data: "cache", "cookies", "storage", "executionContexts"');
     require_once 'autoload.php';
     $home = new HomeController();
     
