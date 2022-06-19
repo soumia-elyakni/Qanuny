@@ -5,7 +5,7 @@ if (!(isset($_SESSION['logged'])) && (!($_SESSION['role'] === 'محام') ||!($_
 }; 
 ?>
 
-<?php include_once 'includes/sidebar.php'; ?>
+
 
 <main style="position: absolute; z-index: 20; width: calc(100% - 270px); top: 62px; right : 270px; padding: 20px;">
 <div class="card py-3 px-2" style="width: 18rem;">

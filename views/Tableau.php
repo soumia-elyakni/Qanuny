@@ -9,9 +9,7 @@ $users =$data-> getAllUsers();
 // print_r($users);
 ?>
 
-<?php
-include_once 'includes/sidebar.php';
-?>
+
 <main class="" style="position: absolute; z-index: 20; width: calc(100% - 270px); top: 62px; right : 270px;">
                 <!--avanttable-->
 
