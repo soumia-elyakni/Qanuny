@@ -28,6 +28,16 @@ class RendezVs {
 
     }
 
+    static public function getOneDemande($id){
+        $stmt=DB::connect();
+        $query = 'SELECT users.nom, users.prenom FROM users INNER JOIN demandes ON users.cin = demandes.cinClient WHERE demandes.idJuriste = $id ';
+        $stmt = $stmt -> prepare($query);
+        $stmt -> execute();
+        $demande =$stmt -> fetchAll();
+        return $demande;
+
+    }
+
 
 
 }
