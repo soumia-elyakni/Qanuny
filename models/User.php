@@ -6,8 +6,15 @@ class user{
         $stmt = $stmt -> prepare('SELECT * FROM users');
         $stmt -> execute();
         return $stmt -> fetchAll();
-        
     }
+
+    static public function getJuriste(){
+        $stmt=DB::connect();
+        $stmt = $stmt -> prepare("SELECT * FROM `users` WHERE role = 'موثق' OR role = 'محام'");
+        $stmt -> execute();
+        return $stmt -> fetchAll();
+    }
+
 
     static public function getUser ($data) {
         $id =  $data [ 'id'];
@@ -47,9 +54,7 @@ class user{
         $stmt = null;
 
         
-            
-     
-
+    
 
     }
 

@@ -6,6 +6,11 @@ class UserControllers {
         return $users;
     }
 
+    public function getJuriste(){
+        $users = user::getJuriste();
+        return $users;
+    }
+
     public function addUser() {
         if(isset($_POST['submit'])){
             $data = [
@@ -33,10 +38,7 @@ class UserControllers {
             }else{
             echo $result;
         }
-
     }
-
-   
 }
 
         public function getOneUSer(){
