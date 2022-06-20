@@ -18,7 +18,7 @@
         }
     }
     
-    $pages = ['home','loginAdmin', 'Tableau','nouveauxJuristes','juristeListe','demandes','rendezVous', 'addUser','deleteAddJuriste','deleteUser', 'confirmUser','loginUser','mesDemandes', 'logouat'];
+    $pages = ['home','loginAdmin', 'Tableau','nouveauxJuristes','juristeListe','demandes','rendezVous', 'addUser','deleteAddJuriste','deleteUser','addDemande', 'confirmUser','loginUser','mesDemandes', 'logouat'];
 
     if(isset($_GET['page'])){
         if(in_array($_GET['page'],$pages)){

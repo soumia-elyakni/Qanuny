@@ -10,7 +10,7 @@ class RendezVs {
 
     static public function add($data){
 
-        $data['pass'] = $data['pass'] ;
+        
         $stmt = DB::connect()->prepare('INSERT INTO demandes (cinClient, idJuriste, title, descript, statut ) VALUES (:cinClient, :idJuriste, :title, :descript, :statut)');
 
         $stmt->bindParam(':cinClient', $data['cinClient']);
@@ -25,9 +25,6 @@ class RendezVs {
             return 'error';
         }
         $stmt = null;
-
-        
-    
 
     }
 

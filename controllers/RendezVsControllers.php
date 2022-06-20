@@ -8,7 +8,7 @@ class RendezVsControllers {
     }
 
     public function addDemande() {
-        if(isset($_POST['submit'])){
+        if(isset($_POST['send'])){
             $data = [
                 'cinClient' => $_SESSION['cin'],
                 'idJuriste' => $_POST['id'],
@@ -23,6 +23,12 @@ class RendezVsControllers {
 
         
     }
+}
+
+public function getOneDemende($id){
+    $id = $_SESSION['id'];
+    $demande = RendezVs::getOneDemande($id);
+    return $demande;
 }
 
 
