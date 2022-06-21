@@ -18,7 +18,7 @@ class JuristeControllers{
         }
     }
 
-    public function deleteJuriste(){
+    public function deleteJuriste($data){
             $data['id'] = $_POST['jurId'];
             $result = Juriste::delete($data);
             if($result === 'ok')

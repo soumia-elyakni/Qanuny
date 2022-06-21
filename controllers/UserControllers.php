@@ -74,7 +74,6 @@ class UserControllers {
                     if($user->mail === $_POST['mail'] && $user->pass === $_POST['pass']){
                         $_SESSION['logged'] = true;                        
                         $_SESSION['mail'] =$user->mail;
-                        $_SESSION['id'] = $user->id;
                         $_SESSION['nom'] = $user->nom;
                         $_SESSION['prenom'] = $user->prenom;
                         $_SESSION['cin'] = $user-> cin;
@@ -84,15 +83,18 @@ class UserControllers {
 
                         if ($user->role == 'عميل') {
                             $_SESSION['role'] = 'عميل';
+                            $_SESSION['id'] = $user->user_id;
                             Redirect::to('juristeListe');
                             die();
 
                         }else if($user->role == 'محام'){
+                            $_SESSION['id'] = $user->juriste_id;
                             $_SESSION['role'] = 'محام';
                             Redirect::to('demandes');
                             die();
                             
                         } else {
+                            $_SESSION['id'] = $user->juriste_id;
                             $_SESSION['role'] = 'موثق';
                             Redirect::to('demandes');
                             die();

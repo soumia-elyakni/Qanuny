@@ -13,7 +13,7 @@ class user{
     static public function getUser ($data) {
         $id =  $data [ 'id'];
         try{
-        $query = 'SELECT * FROM users WHERE id = :id';
+        $query = 'SELECT * FROM users WHERE user_id = :id';
         $stmt = DB::connect () ->prepare ($query);
         $stmt->execute (array (" : id" => $id));
         $user = $stmt->fetch(PDO::FETCH_OBJ);
@@ -53,32 +53,31 @@ class user{
     }
 
 
+    static function update($data){
+        $stmt = DB::connect()->prepare('UPDATE users SET nom = :nom , prenom = :prenom , cin = :cin , tel = :tel , ville = :ville , role = :role  WHERE user_id= :id ');
 
-    // static function update($data){
-    //     $stmt = DB::connect()->prepare('UPDATE users SET nom = :nom , prenom = :prenom , cin = :cin , tel = :tel , ville = :ville , role = :role  WHERE id= :id ');
+        $stmt->bindParam(':user_id', $data['id']);
+        $stmt->bindParam(':nom', $data['nom']);
+        $stmt->bindParam(':prenom', $data['prenom']);
+        $stmt->bindParam(':cin', $data['cin']);
+        $stmt->bindParam(':tel', $data['tel']);
+        $stmt->bindParam(':ville', $data['ville']);
+        $stmt->bindParam(':role', $data['role']);
 
-    //     $stmt->bindParam(':id', $data['id']);
-    //     $stmt->bindParam(':nom', $data['nom']);
-    //     $stmt->bindParam(':prenom', $data['prenom']);
-    //     $stmt->bindParam(':cin', $data['cin']);
-    //     $stmt->bindParam(':tel', $data['tel']);
-    //     $stmt->bindParam(':ville', $data['ville']);
-    //     $stmt->bindParam(':role', $data['role']);
+        if($stmt->execute()){
+            return 'ok';
+            header('location :Tableau');
+        }else{
+            return 'error';
+        }
 
-    //     if($stmt->execute()){
-    //         return 'ok';
-    //         header('location :Tableau');
-    //     }else{
-    //         return 'error';
-    //     }
-
-
-    // }
+    }
+    
 
     static public function delete($data){
         $id = $data['id'];
             try{
-                $query = 'DELETE FROM users WHERE id = :id';
+                $query = 'DELETE FROM users WHERE user_id = :id';
                 $stmt = DB::connect () ->prepare ($query);
                 $stmt->execute (array (":id" => $id));
                 $user = $stmt->fetch(PDO::FETCH_OBJ);
@@ -112,18 +111,7 @@ class user{
         }
     
 
-    // static public function login($mail, $password){
 
-    //     $password = md5($password);
-        
-
-    //     $query = "SELECT * FROM users WHERE mail = '. $mail.'  AND pass = ' .$password'";
-    //     $stmt = DB::connect () ->prepare ($query);
-    //     $stmt-> execute();
-    //     $user = $stmt->fetchAll();        
-    //     return $user; 
-       
-    // }
 
 
 
