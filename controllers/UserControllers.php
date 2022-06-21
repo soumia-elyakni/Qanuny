@@ -6,10 +6,6 @@ class UserControllers {
         return $users;
     }
 
-    public function getJuriste(){
-        $users = user::getJuriste();
-        return $users;
-    }
 
     public function addUser() {
         if(isset($_POST['submit'])){
@@ -51,15 +47,6 @@ class UserControllers {
             
         }
 
-        public function confirmUser($data){
-            $result = User::confirm($data);
-            
-            if($result === "ok"){
-                return true;
-            } else {
-                return 'not yet';
-            }
-        }
 
 
         public function deleteUser(){

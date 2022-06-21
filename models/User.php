@@ -8,12 +8,6 @@ class user{
         return $stmt -> fetchAll();
     }
 
-    static public function getJuriste(){
-        $stmt=DB::connect();
-        $stmt = $stmt -> prepare("SELECT * FROM `users` WHERE role = 'موثق' OR role = 'محام'");
-        $stmt -> execute();
-        return $stmt -> fetchAll();
-    }
 
 
     static public function getUser ($data) {
@@ -58,29 +52,7 @@ class user{
 
     }
 
-    static public function confirm($data){
 
-        $stmt = DB::connect()->prepare('INSERT INTO users (nom, prenom, cin, sexe, telephone, ville, role, mail, pass ) VALUES (:nom, :prenom, :cin, :sexe, :telephone, :ville, :role, :mail, :pass)');
-        $stmt->bindParam(':nom', $data->nom);
-        $stmt->bindParam(':prenom', $data->prenom);
-        $stmt->bindParam(':cin', $data->cin);
-        $stmt->bindParam(':sexe', $data->sexe);
-        $stmt->bindParam(':telephone', $data->telephone);
-        $stmt->bindParam(':ville', $data->ville);
-        $stmt->bindParam(':role', $data->role);
-        $stmt->bindParam(':mail', $data->mail);
-        $stmt->bindParam(':pass', $data->pass);
-
-        
-
-        if($stmt->execute()){
-            return 'ok';
-        } else {
-            return 'error';
-        }
-        $stmt = null;
-
-    }
 
     // static function update($data){
     //     $stmt = DB::connect()->prepare('UPDATE users SET nom = :nom , prenom = :prenom , cin = :cin , tel = :tel , ville = :ville , role = :role  WHERE id= :id ');
@@ -127,6 +99,7 @@ class user{
 
             try {
                 $query = 'SELECT * FROM users WHERE mail=:mail'; 
+                $query = 'SELECT * FROM juristes WHERE mail=:mail'; 
                 $stmt = DB::connect()->prepare($query);
                 $stmt->execute(array(  
 					':mail'     =>     $mail,  
