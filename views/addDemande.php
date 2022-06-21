@@ -1,7 +1,7 @@
 
 <?php 
 if (isset($_POST['submit'])){
-    $id = $_POST['id'];
+    $id = $_POST['juriste_id'];
 } 
 
 if (isset($_POST['send'])){
@@ -22,7 +22,7 @@ if (isset($_POST['send'])){
   <textarea class="form-control" name="descript" id="exampleFormControlTextarea1" rows="3" placeholder="اشرح المشكلة"></textarea>
 </div>
 <div class="col-auto">
-    <input type="hidden" name="id" value="<?php echo $id ?>">
+    <input type="hidden" name="juriste_id" value="<?php echo $id ?>">
     <button type="submit" name="send" class="btn btn-primary mb-3">ارسال</button>
   </div>
 

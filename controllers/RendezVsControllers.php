@@ -10,12 +10,11 @@ class RendezVsControllers {
     public function addDemande() {
         if(isset($_POST['send'])){
             $data = [
-                'cinClient' => $_SESSION['cin'],
-                'idJuriste' => $_POST['id'],
+                'user_id' => $_SESSION['id'],
+                'juriste_id' => $_POST['juriste_id'],
                 'title' => $_POST['title'],
                 'descript' => $_POST['descript'],
-                'statut' => "En attente",
-
+                
             ];
 
             $result = RendezVs::add($data);

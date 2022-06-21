@@ -63,7 +63,7 @@ $juristes =$data-> getAllJuristes();
                                 <td scope="col"><?= $juriste['ville']?></td>
                                 <td scope="col" colspan="2">
                                         <form method="POST" action="deleteUser" class="mr-1">
-                                            <input type="hidden" name="jurId" value="<?php echo $juriste['id']; ?>">
+                                            <input type="hidden" name="jurId" value="<?php echo $juriste['juriste_id']; ?>">
                                             <button type="submit" name="delete" class="border border-0">
                                                 <i class="far fa-trash text-danger"></i>
                                             </button>

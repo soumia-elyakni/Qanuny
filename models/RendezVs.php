@@ -11,13 +11,13 @@ class RendezVs {
     static public function add($data){
 
         
-        $stmt = DB::connect()->prepare('INSERT INTO demandes (cinClient, idJuriste, title, descript, statut ) VALUES (:cinClient, :idJuriste, :title, :descript, :statut)');
+        $stmt = DB::connect()->prepare('INSERT INTO demandes (user_id, juriste_id, title, descript ) VALUES (:user_id, :juriste_id, :title, :descript)');
 
-        $stmt->bindParam(':cinClient', $data['cinClient']);
-        $stmt->bindParam(':idJuriste', $data['idJuriste']);
+        $stmt->bindParam(':user_id', $data['user_id']);
+        $stmt->bindParam(':juriste_id', $data['juriste_id']);
         $stmt->bindParam(':title', $data['title']);
         $stmt->bindParam(':descript', $data['descript']);
-        $stmt->bindParam(':statut', $data['statut']);   
+         
 
         if($stmt->execute()){
             return 'ok';

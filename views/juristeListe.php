@@ -27,7 +27,7 @@
         <h5 class="card-title"><?= $juriste['nom'] ?> <?= $juriste['prenom'] ?></h5>
         <p class="card-text"><?= $juriste['role'] ?></p>
         <form action="addDemande" method="POST">
-          <input type="hidden" name="id" value="<?php echo $juriste['id'] ?>">
+          <input type="hidden" name="juriste_id" value="<?php echo $juriste['juriste_id'] ?>">
           <button type="submit" name="submit" class="btn btn-primary mb-3"> ارسال طلب</button>
         </form>
 
