@@ -8,7 +8,7 @@ if(isset($_POST['id'])){
 if(isset($_POST['jurId'])){
   $data['id']= $_POST['jurId'];
   $exitUser = new JuristeControllers();
-  $exitUser -> deleteJuriste();
+  $exitUser -> deleteJuriste($data);
   Redirect::to('TableauJuriste');
 }
 ?>
