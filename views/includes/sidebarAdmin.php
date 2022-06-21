@@ -19,6 +19,12 @@
         </li>
         <ul class="linklist d-flex flex-column justify-content-center align-items-center  p-1">
             <li class="link mt-3 ps-3 rounded-3 ">
+                <a href="nouveauxJuristes">
+                    <img class="mx-auto" src="images/svg/cours.svg" alt="">
+                    <small class="text-light">طلبات التسجيل</small>
+                </a>
+            </li>
+            <li class="link mt-3 ps-3 rounded-3 ">
                 <a href="TableauJuriste">
                     <img class="mx-auto" src="images/svg/home.svg" alt="">
                     <small class="text-light">لائحة الموثقين و المحامين</small>
@@ -28,12 +34,6 @@
                 <a href="Tableau">
                     <img class="mx-auto" src="images/svg/home.svg" alt="">
                     <small class="text-light">لائحة العملاء</small>
-                </a>
-            </li>
-            <li class="link mt-3 ps-3 rounded-3 ">
-                <a href="nouveauxJuristes">
-                    <img class="mx-auto" src="images/svg/cours.svg" alt="">
-                    <small class="text-light">طلبات التسجيل</small>
                 </a>
             </li>
 
