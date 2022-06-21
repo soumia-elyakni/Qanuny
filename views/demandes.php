@@ -3,6 +3,13 @@
 if (!(isset($_SESSION['logged'])) && (!($_SESSION['role'] === 'محام') ||!($_SESSION['role'] === 'موثق'))){
   Redirect::to('home');
 }; 
+
+$id = $_SESSION['id'];
+$data = new RendezVsControllers() ;
+$demandes = $data-> getOneDemande($id);
+var_dump($demandes);
+die();
+
 ?>
 
 
@@ -19,16 +26,16 @@ if (!(isset($_SESSION['logged'])) && (!($_SESSION['role'] === 'محام') ||!($_
     </select>
     </section>
 
-<?php ?>
+<?php foreach ($demandes as $demande): ?>
 <div class="card m-auto p-4 mb-4">
   <div class="card-header">
-    <h6>علي العال</h6>
-    <p>04/06/2022</p>
+    <h6><?= $demande['nom']?> <?= $demande['prenom']?></h6>
+    <p><?= $demande['demandeDate'] ?></p>
   </div>
   <div class="card-body">
-    <h5 class="card-title">اجراءات الحصول على الحضانة</h5>
-    <p class="card-text">لوريم ابسوم بننبتنتبلمنتلقهثتلقثهتلقهثتلقهتلقهخلاقهخلاقخلتتلتل</p>
-    <p class="card-text"><?= $_SESSION['mail']?></p>
+    <h5 class="card-title"><?= $demandes['title'] ?></h5>
+    <p class="card-text">ل</p>
+
 <div class=" d-flex float-start">  
 <form class="ms-1">
     <a href="#" class="btn btn-primary">القبول</a>
@@ -39,7 +46,7 @@ if (!(isset($_SESSION['logged'])) && (!($_SESSION['role'] === 'محام') ||!($_
 </div> 
   </div>
 </div>
-<?php ?>
+<?php endforeach; ?>
 
 
 </main>
