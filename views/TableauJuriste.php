@@ -6,7 +6,9 @@ if(!isset($_SESSION['logged']) || !($_SESSION['role'] == "admin")){
 
 $data = new JuristeControllers();
 $juristes =$data-> getAllJuristes();
-// print_r($users);
+
+
+
 ?>
 
 
@@ -60,7 +62,7 @@ $juristes =$data-> getAllJuristes();
                                 <td scope="col"><?= $juriste['role']?></td>
                                 <td scope="col"><?= $juriste['ville']?></td>
                                 <td scope="col" colspan="2">
-                                        <form method="POST" class="mr-1" action="deleteUser">
+                                        <form method="POST" action="deleteUser" class="mr-1">
                                             <input type="hidden" name="jurId" value="<?php echo $juriste['id']; ?>">
                                             <button type="submit" name="delete" class="border border-0">
                                                 <i class="far fa-trash text-danger"></i>
