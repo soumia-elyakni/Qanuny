@@ -5,11 +5,11 @@ if(isset($_POST['id'])) {
     $id = $_POST['id'];
     $PreUser = new PreUserControllers();
     $data = $PreUser-> getOnePreUSer($id);
-    $user = new UserControllers();
+    $juriste = new JuristeControllers();
 
-    if($user -> confirmUser($data)){
-
+    if($juriste -> confirmJuriste($data)){
         $PreUser-> deletePreUser($id); 
+        Redirect::to('nouveauxJuriste');
     }
     
    
