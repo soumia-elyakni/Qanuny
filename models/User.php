@@ -97,14 +97,35 @@ class user{
             $mail = $data['mail'];
 
             try {
+
+
+                
                 $query = 'SELECT * FROM users WHERE mail=:mail'; 
-                $query = 'SELECT * FROM juristes WHERE mail=:mail'; 
                 $stmt = DB::connect()->prepare($query);
                 $stmt->execute(array(  
 					':mail'     =>     $mail,  
 				));
+
                 $user = $stmt->fetch(PDO::FETCH_OBJ);
-                return $user;
+                
+                if($user){
+                    return $user;
+                }else{
+                    
+                    $query = 'SELECT * FROM juristes WHERE mail=:mail'; 
+                    $stmt = DB::connect()->prepare($query);
+                    $stmt->execute(array(  
+                        ':mail'     =>     $mail,  
+                    ));
+    
+                    $user = $stmt->fetch(PDO::FETCH_OBJ);
+
+                    return $user;
+
+                }
+
+
+
             }catch(PDOException $ex){
                 echo 'erreur' . $ex->getMessage();
             }
