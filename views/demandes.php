@@ -4,11 +4,10 @@ if (!(isset($_SESSION['logged'])) && (!($_SESSION['role'] === 'محام') ||!($_
   Redirect::to('home');
 }; 
 
-$id = $_SESSION['id'];
-$data = new RendezVsControllers() ;
-$demandes = $data-> getOneDemande($id);
-var_dump($demandes);
-die();
+// $id = $_SESSION['id'];
+// $data = new RendezVsControllers() ;
+// $demandes = $data-> getOneDemande($id);
+
 
 ?>
 
