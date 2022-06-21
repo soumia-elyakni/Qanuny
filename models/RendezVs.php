@@ -29,15 +29,15 @@ class RendezVs {
     }
 
     static public function getOneDemande($id){
+       
         $stmt=DB::connect();
-        $query = 'SELECT users.nom, users.prenom FROM users INNER JOIN demandes ON users.cin = demandes.cinClient WHERE demandes.idJuriste = $id ';
+        $query = "SELECT * FROM users INNER JOIN demandes On users.cin = demandes.cin WHERE users.id = .$id ";
         $stmt = $stmt -> prepare($query);
         $stmt -> execute();
-        $demande =$stmt -> fetchAll();
+        $demande =$stmt->fetch(PDO::FETCH_ASSOC);
         return $demande;
 
     }
-
 
 
 }

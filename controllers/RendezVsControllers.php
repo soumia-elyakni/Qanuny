@@ -25,10 +25,13 @@ class RendezVsControllers {
     }
 }
 
-public function getOneDemende($id){
-    $id = $_SESSION['id'];
+public function getOneDemande($id){
+    
     $demande = RendezVs::getOneDemande($id);
+    var_dump($demande);
+    die();
     return $demande;
+
 }
 
 
