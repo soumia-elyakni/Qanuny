@@ -3,8 +3,8 @@
     Redirect::to('home');
     die();
   }
-  $data = new UserControllers() ;
-  $juristes = $data->getJuriste();
+  $data = new JuristeControllers() ;
+  $juristes = $data->getAllJuristes();
 ?>
 
   
