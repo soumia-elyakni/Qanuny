@@ -26,11 +26,11 @@ $users = $data->getAllPUsers();
         <div>
           <form method="POST" action="confirmUser">
             <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
-            <button class="btn btn-primary text-light float-end">Accepter</button>
+            <button class="btn btn-primary text-light float-end">قبول</button>
           </form>
           <form method="POST" action="deleteAddJuriste">
             <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
-            <button class="btn btn-secondary text-light me-2 float-end">Refuser</button>
+            <button class="btn btn-secondary text-light me-2 float-end">رفض</button>
           </form>
         </div>
 
