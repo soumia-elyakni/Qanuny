@@ -8,6 +8,19 @@ class RendezVs {
         
     }
 
+    static public function getDemande($id){
+
+        try{
+            $query = 'SELECT * FROM demandes WHERE id = :id';
+            $stmt = DB::connect () ->prepare ($query);
+            $stmt->execute (array (" : id" => $id));
+            $demande = $stmt->fetch(PDO::FETCH_OBJ);
+            return $demande;
+            } catch (PDOException $ex){
+            echo 'erreur' .$ex->getMessage();
+            }
+    }
+
     static public function add($data){
 
         
@@ -28,14 +41,70 @@ class RendezVs {
 
     }
 
-    static public function getOneDemande($id){
+    static public function getAllDemandeByJuriste($id){
+        
+        $stmt=DB::connect();
+        $query = "SELECT juristes.nom,juristes.prenom,juristes.mail,juristes.telephone,demandes.id,demandes.title,demandes.descript,demandes.demande_date,demandes.statut,demandes.dateRV,demandes.lienRV,demandes.document FROM demandes  JOIN juristes  ON juristes.juriste_id=demandes.juriste_id WHERE user_id=:id ";
+        $stmt = $stmt -> prepare($query);
+        $stmt->bindParam(':id', $id );
+        $stmt -> execute();
+        $demande =$stmt->fetchAll();
+        
+        return $demande;
+        
+
+
+    }
+
+    static public function getAllDemandeByUser($id){
        
         $stmt=DB::connect();
-        $query = "SELECT * FROM users INNER JOIN demandes On users.cin = demandes.cin WHERE users.id = .$id ";
+        $query = "SELECT users.prenom,users.nom,users.mail,users.telephone,demandes.id,demandes.title,demandes.descript,demandes.demande_date,demandes.statut,demandes.dateRV,demandes.lienRV,demandes.document FROM demandes  JOIN juristes  ON users.user_id=demandes.user_id WHERE juriste_id=:id ";
         $stmt = $stmt -> prepare($query);
+        $stmt->bindParam(':id', $id );
         $stmt -> execute();
-        $demande =$stmt->fetch(PDO::FETCH_ASSOC);
+        $demande =$stmt->fetchAll();
+        
         return $demande;
+
+    }
+
+    static public function update($dmdData){
+        $title = $dmdData['title'];
+        $descript = $dmdData['descript'];
+        $id = $dmdData['id'];
+        $query = "UPDATE demandes SET title = :title, descript = :descript WHERE id = :id";
+        $stmt = DB::connect() -> prepare($query);
+        $stmt-> bindParam(':id', $id);
+        $stmt -> bindParam(':title' , $title);
+        $stmt -> bindParam(':descript' , $descript);
+
+            if($stmt ->execute()){
+                Redirect::to('mesDemandes');
+            } else {
+                return 'error';
+            }
+
+
+    }
+
+    static public function delete($id){
+
+      
+        try{
+            $query = 'DELETE FROM demandes WHERE id = :id';
+            $stmt = DB::connect () ->prepare ($query);
+            $stmt->execute (array (":id" => $id));
+            $user = $stmt->fetch(PDO::FETCH_OBJ);
+            return $user;
+            $stmt->execute();
+
+            if($stmt->execute()){
+                return "ok";
+            }
+            } catch (PDOException $ex){
+            echo 'erreur' .$ex->getMessage();
+            }
 
     }
 
