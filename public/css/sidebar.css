@@ -30,7 +30,7 @@
 } 
 
 
-.nav_bar{
+.navbar{
     width: calc(100% - 270px);
     left: 270px;
     top: O;
@@ -39,11 +39,11 @@
     z-index: 40;
 }
 .side_bar ul li,
-.nav_bar ul li{
+.navbar ul li{
     list-style: none;
 }
 .side_bar ul li a,
-.nav_bar ul li a{
+.navbar ul li a{
     text-decoration: none;
     color: black;
 }
@@ -56,17 +56,5 @@
     .side_bar.active{
         display: block;
     }
-    .nav_bar{
-        width: 100%;
-        left: 0;
-    }
-    .nav_bar ul li:first-child span,
-    .side_bar ul li:first-child span{
-        display: block !important;
-    }
-    .side_bar ul li:first-child{
-        display: flex;
-        margin: 0;
-        padding: 0;
-    }
+
 }
