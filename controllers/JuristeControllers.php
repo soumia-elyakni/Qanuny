@@ -7,6 +7,11 @@ class JuristeControllers{
         return $juristes;
     }
 
+    public function getAllAvocat(){
+        $avocat = juriste::getAvocat();
+        return $avocat;
+    }
+
     public function confirmJuriste($data){
         $result = Juriste::confirm($data);
         

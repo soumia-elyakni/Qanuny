@@ -8,6 +8,12 @@ class Juriste{
         return $stmt -> fetchAll();
     }
 
+    static public function getAvocat(){
+        $stmt = DB::connect();
+        $stmt = $stmt -> prepare("SELECT * FROM juristes WHERE role = 'محام' ");
+        // $stmt
+    }
+
 
 static public function confirm($data){
 
