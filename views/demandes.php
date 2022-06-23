@@ -4,10 +4,8 @@ if (!(isset($_SESSION['logged'])) && (!($_SESSION['role'] === 'محام') ||!($_
   Redirect::to('home');
 }; 
 
-// $id = $_SESSION['id'];
-// $data = new RendezVsControllers() ;
-// $demandes = $data-> getOneDemande($id);
-
+$RendezVs = new RendezVsControllers() ;
+$demandes = $RendezVs -> readDemandes();
 
 ?>
 
@@ -29,17 +27,19 @@ if (!(isset($_SESSION['logged'])) && (!($_SESSION['role'] === 'محام') ||!($_
 <div class="card m-auto p-4 mb-4">
   <div class="card-header">
     <h6><?= $demande['nom']?> <?= $demande['prenom']?></h6>
-    <p><?= $demande['demandeDate'] ?></p>
+    <p><?= $demande['demande_date'] ?></p>
   </div>
   <div class="card-body">
-    <h5 class="card-title"><?= $demandes['title'] ?></h5>
-    <p class="card-text">ل</p>
+    <h5 class="card-title"><?= $demande['title'] ?></h5>
+    <p class="card-text"><?= $demande['descript'] ?></p>
 
 <div class=" d-flex float-start">  
-<form class="ms-1">
+<form class="ms-1" name="">
+    <input type="hidden" name="demande_id" value="">
     <a href="#" class="btn btn-primary">القبول</a>
 </form>
 <form class="me-1">
+    <input type="hidden" name="demande_id" value="">
     <a href="#" class="btn btn-primary">الرفض</a>
 </form>
 </div> 

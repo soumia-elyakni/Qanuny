@@ -59,7 +59,7 @@ class RendezVs {
     static public function getAllDemandeByUser($id){
        
         $stmt=DB::connect();
-        $query = "SELECT users.prenom,users.nom,users.mail,users.telephone,demandes.id,demandes.title,demandes.descript,demandes.demande_date,demandes.statut,demandes.dateRV,demandes.lienRV,demandes.document FROM demandes  JOIN juristes  ON users.user_id=demandes.user_id WHERE juriste_id=:id ";
+        $query = "SELECT users.nom,users.prenom,users.mail,users.telephone,demandes.id,demandes.title,demandes.descript,demandes.demande_date,demandes.statut,demandes.dateRV,demandes.lienRV,demandes.document FROM demandes  JOIN users  ON users.user_id=demandes.user_id WHERE juriste_id=:id ";
         $stmt = $stmt -> prepare($query);
         $stmt->bindParam(':id', $id );
         $stmt -> execute();
