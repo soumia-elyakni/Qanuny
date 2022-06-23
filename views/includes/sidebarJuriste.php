@@ -40,3 +40,4 @@
         </ul>
     </ul>
 </nav>
+<script src='public/js/sidebar.js'></script>
