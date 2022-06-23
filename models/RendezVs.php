@@ -57,11 +57,13 @@ class RendezVs {
     }
 
     static public function getAllDemandeByUser($id){
-       
+        
+        $attente = "الانتظار";
         $stmt=DB::connect();
-        $query = "SELECT users.nom,users.prenom,users.mail,users.telephone,demandes.id,demandes.title,demandes.descript,demandes.demande_date,demandes.statut,demandes.dateRV,demandes.lienRV,demandes.document FROM demandes  JOIN users  ON users.user_id=demandes.user_id WHERE juriste_id=:id ";
+        $query = "SELECT users.nom,users.prenom,users.mail,users.telephone,demandes.id,demandes.title,demandes.descript,demandes.demande_date,demandes.statut,demandes.dateRV,demandes.lienRV,demandes.document FROM demandes  JOIN users  ON users.user_id=demandes.user_id WHERE juriste_id=:id AND statut = :statut ";
         $stmt = $stmt -> prepare($query);
         $stmt->bindParam(':id', $id );
+        $stmt ->bindparam(':statut', $attente );
         $stmt -> execute();
         $demande =$stmt->fetchAll();
         
@@ -87,6 +89,41 @@ class RendezVs {
 
 
     }
+
+    static public function accept($dataRV){
+
+        $statut = "مقبول";
+        $query = "UPDATE demandes SET dateRV = :dateRV, lienRV = :lienRV,  document = :document, statut=:statut WHERE id = :id";
+        $stmt = DB::connect()-> prepare($query);
+        $stmt -> bindParam(':id', $dataRV['demande_id']);
+        $stmt -> bindParam(':dateRV', $dataRV['dateRV']);
+        $stmt -> bindParam(':lienRV', $dataRV['lienRV']);
+        $stmt -> bindParam(':document', $dataRV['document']);
+        $stmt -> bindParam(':statut', $statut);
+       
+        if($stmt ->execute()){
+            Redirect::to('rendezVous');
+        } else {
+            return 'error';
+        }
+
+    }
+
+    static public function refu($id){
+        $statut = "مرفوض";
+        $query = "UPDATE demandes SET statut = :statut WHERE id = :id";
+        $stmt = DB::connect()-> prepare($query);
+        $stmt -> bindParam(':statut', $statut);
+        $stmt -> bindParam(':id', $id);
+
+        if($stmt ->execute()){
+            Redirect::to('demandes');
+        } else {
+            return 'error';
+        }
+    }
+
+
 
     static public function delete($id){
 

@@ -52,12 +52,32 @@ public function updateDemande(){
         'descript' => $_POST['descript'],
         'id' => $_POST['demande_id']
        ];
-    $id = $_POST['demande_id'];
+    
     $update = RendezVs::update($dmdData);
     return $update;
 
 }
 
+public function acceptDemande(){
+    $dataRV=[
+        "dateRV"=>$_POST['dateRV'],
+        "lienRV"=>$_POST['lienRV'],
+        "document"=>$_POST['document'],
+        "demande_id"=>$_POST['demande_id']
+    ];
+         
+    $accept = RendezVs::accept($dataRV);
+    return $accept;
+
+}
+
+public function refuDemande(){
+
+    $id = $_POST['demande_id'];   
+    $refu = RendezVs::refu($id);
+    return $refu;
+
+}
 
 public function deleteDemande(){
    
