@@ -21,11 +21,12 @@
    <section class="d-flex  w-100">
 
     <?php foreach($juristes as $juriste): ?>
-      <div class="col-4 card py-3 px-2 m-0" style="width: 18rem;">
+      <div class="col-4 card py-3 px-2 ms-1" style="width: 18rem;">
       <img src="public/image/mr_nobody_new.svg" class="card-img-top w-50 m-auto" alt="photo">
       <div class="card-body m-auto">
         <h5 class="card-title"><?= $juriste['nom'] ?> <?= $juriste['prenom'] ?></h5>
         <p class="card-text"><?= $juriste['role'] ?></p>
+        <p class="card-text"><?= $juriste['ville'] ?></p>
         <form action="addDemande" method="POST">
           <input type="hidden" name="juriste_id" value="<?php echo $juriste['juriste_id'] ?>">
           <button type="submit" name="submit" class="btn btn-primary mb-3"> ارسال طلب</button>
