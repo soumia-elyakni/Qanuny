@@ -43,6 +43,7 @@ class UserControllers {
                     'id'=> $_POST['id'],
                 ];
                 $user = User::getUser($data);
+                return $user;
             }
             
         }
@@ -82,8 +83,10 @@ class UserControllers {
 
 
                         if ($user->role == 'عميل') {
+                            
                             $_SESSION['role'] = 'عميل';
                             $_SESSION['id'] = $user->user_id;
+                            
                             Redirect::to('juristeListe');
                             die();
 

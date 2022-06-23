@@ -65,8 +65,7 @@ class user{
         $stmt->bindParam(':role', $data['role']);
 
         if($stmt->execute()){
-            return 'ok';
-            header('location :Tableau');
+            Redirect::to('juristeListe');
         }else{
             return 'error';
         }
