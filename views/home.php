@@ -8,6 +8,11 @@
     } else if (isset($_SESSION['logged']) && $_SESSION['role'] === 'admin') {
       Redirect::to('nouveauxJuristes'); 
     }
+
+    $juriste = new JuristeControllers();
+    $avocats = $juriste-> getAllAvocat();
+    $notaires = $juriste-> getAllNotaire();
+
   ?>
 
    <title>Al-Qanuny</title>
@@ -34,22 +39,14 @@
 
            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
              <div class="carousel-inner">
+              
+              <?php foreach($avocats as $avocat): ?>
                <div class="carousel-item  active">
                  <img src="./public/image/mr_nobody_new.svg" class="d-block w-30" alt="...">
-                 <span class="text-center">الاسم الكامل</span>
+                 <span class="text-center"><?= $avocat['nom'] ?> <?= $avocat['prenom'] ?></span>
                </div>
-               <div class="carousel-item  ">
-                 <img src="./public/image/mr_nobody_new.svg" class="d-block w-30" alt="...">
-                 <span>الاسم الكامل</span>
-               </div>
-               <div class="carousel-item  ">
-                 <img src="./public/image/mr_nobody_new.svg" class="d-block w-30" alt="...">
-                 <span>الاسم الكامل</span>
-               </div>
-               <div class="carousel-item  ">
-                 <img src="./public/image/mr_nobody_new.svg" class="d-block w-30" alt="...">
-                 <span>الاسم الكامل</span>
-               </div>
+              <?php endforeach ?>
+              
              </div>
              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -68,22 +65,12 @@
            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
 
              <div class="carousel-inner">
+             <?php foreach($notaires as $notaire): ?>
                <div class="carousel-item active">
                  <img src="./public/image/mr_nobody_new.svg" class="d-block w-30" alt="...">
-                 <span>الاسم الكامل</span>
+                 <span><?= $notaire['nom'] ?> <?= $notaire['prenom'] ?></span>
                </div>
-               <div class="carousel-item">
-                 <img src="./public/image/mr_nobody_new.svg" class="d-block w-30" alt="...">
-                 <span>الاسم الكامل</span>
-               </div>
-               <div class="carousel-item">
-                 <img src="./public/image/mr_nobody_new.svg" class="d-block w-30" alt="...">
-                 <span>الاسم الكامل</span>
-               </div>
-               <div class="carousel-item">
-                 <img src="./public/image/mr_nobody_new.svg" class="d-block w-30" alt="...">
-                 <span>الاسم الكامل</span>
-               </div>
+               <?php endforeach ?>
              </div>
              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
