@@ -37,21 +37,21 @@
 <div class="card mb-3 m-auto p-3 bg-light" style="max-width: 90%;">
   <div class="row g-1">
     <div class="col-md-3 p-3 border-start border-secondary">
-      <img src="public/image/mr_nobody_new.svg" class="img-fluid rounded-start w-50" alt="...">
-      <h6><?= $demande['nom']?>  <?=$demande['prenom']?></h6>
+      <img src="public/image/mr_nobody_new.svg" class="img-fluid rounded-start w-50 m-auto" alt="...">
+      <h6 class="text-info"><?= $demande['nom']?>  <?=$demande['prenom']?></h6>
       <p><?= $demande['mail']?></p>
       <p><?= $demande['telephone']?></p>
     </div>
 
     <div class="w-md-75 col-md-6 border-start border-secondary ">
       <div class="card-body">
-        <h5 class="card-title"><?= $demande['title']?></h5>
-        <p class="card-text"> <?= $demande['descript']?></p>
+        <h5 class="card-title text-info text-center"><?= $demande['title']?></h5>
+        <p class="card-text "> <?= $demande['descript']?></p>
         
       </div>
     </div>
     <div class="col-md-3 p-3">
-      <h6><?= $demande['statut']?></h6>
+      <h6 class="fs-2 text-center mb-5"><?= $demande['statut']?></h6>
       <p><?= $demande['dateRV']?></p>
       <p><?= $demande['lienRV']?></p>
       <p><?= $demande['document']?></p>

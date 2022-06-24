@@ -46,6 +46,13 @@ public function readDemandes(){
     }
 }
 
+
+public function rendezVs(){
+    $id = $_SESSION['id'];
+    $rendezVs = RendezVs::getALLjuristeRendezVs($id);
+    return $rendezVs;
+
+}
 public function updateDemande(){
     $dmdData=[
         'title' => $_POST['title'],

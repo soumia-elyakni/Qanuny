@@ -123,6 +123,18 @@ class RendezVs {
         }
     }
 
+    static public function getALLjuristeRendezVs($id){
+        $accept = "مقبول";
+        $stmt=DB::connect();
+        $query = "SELECT users.nom,users.prenom,users.mail,users.telephone,demandes.id,demandes.title,demandes.descript,demandes.demande_date,demandes.statut,demandes.dateRV,demandes.lienRV,demandes.document FROM demandes  JOIN users  ON users.user_id=demandes.user_id WHERE juriste_id=:id AND statut = :statut ";
+        $stmt = $stmt -> prepare($query);
+        $stmt->bindParam(':id', $id );
+        $stmt ->bindparam(':statut', $accept );
+        $stmt -> execute();
+        $RendezVs =$stmt->fetchAll();
+        
+        return $RendezVs;
+    }
 
 
     static public function delete($id){
