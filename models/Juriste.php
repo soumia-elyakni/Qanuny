@@ -10,8 +10,18 @@ class Juriste{
 
     static public function getAvocat(){
         $stmt = DB::connect();
-        $stmt = $stmt -> prepare("SELECT * FROM juristes WHERE role = 'محام' ");
-        // $stmt
+        $stmt = $stmt -> prepare("SELECT * FROM juristes WHERE role = 'محام'");
+        $stmt -> execute();
+        $avocat = $stmt -> fetchAll();
+        return $avocat;
+    }
+
+    static public function getNotaire(){
+        $stmt = DB::connect();
+        $stmt = $stmt -> prepare("SELECT * FROM juristes WHERE role = 'موثق'");
+        $stmt -> execute();
+        $notaires = $stmt -> fetchAll();
+        return $notaires;
     }
 
 

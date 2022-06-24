@@ -12,6 +12,11 @@ class JuristeControllers{
         return $avocat;
     }
 
+    public function getAllNotaire(){
+        $notaire = juriste::getNotaire();
+        return $notaire;
+    }
+
     public function confirmJuriste($data){
         $result = Juriste::confirm($data);
         
