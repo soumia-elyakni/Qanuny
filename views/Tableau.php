@@ -18,15 +18,6 @@ $users =$data-> getAllUsers();
 
         <h2 class="tabtitle col-6 align-self-center mt-1 text-end mb-3">لائحة المستخدمين</h2> 
         
-        <select name="role" class="select mt-3 float-start" id="role" style="width : 190px">
-               <option selected="selected" value="0">-اختر نوع الحساب-</option>
-               <option value="عميل">عميل</option>
-               <option value="محام">محام</option>
-               <option value="موثق">موثق</option>
-        </select>
-
-       
-
       </section>
 
                    <!--table-->

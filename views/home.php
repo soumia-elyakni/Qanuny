@@ -41,7 +41,7 @@
              <div class="carousel-inner">
               
               <?php foreach($avocats as $avocat): ?>
-               <div class="carousel-item  active">
+               <div class="carousel-item active">
                  <img src="./public/image/mr_nobody_new.svg" class="d-block w-30" alt="...">
                  <span class="text-center"><?= $avocat['nom'] ?> <?= $avocat['prenom'] ?></span>
                </div>
@@ -72,6 +72,7 @@
                </div>
                <?php endforeach ?>
              </div>
+             
              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                <span class="visually-hidden">Previous</span>

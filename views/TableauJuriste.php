@@ -22,7 +22,6 @@ $juristes =$data-> getAllJuristes();
         
         <select name="role" class="select mt-3 float-start" id="role" style="width : 190px">
                <option selected="selected" value="0">-اختر نوع الحساب-</option>
-               <option value="عميل">عميل</option>
                <option value="محام">محام</option>
                <option value="موثق">موثق</option>
         </select>
@@ -55,8 +54,8 @@ $juristes =$data-> getAllJuristes();
                               <?php foreach($juristes as $juriste): ?>
                                 <tr>
                                 <td class="d-none"></td>
-                                <td scope="col"><?= $juriste['nom']?></td>
                                 <td scope="col"><?= $juriste['cin']?></td>
+                                <td scope="col"><?= $juriste['nom']?></td>
                                 <td scope="col"><?= $juriste['prenom']?></td>
                                 <td scope="col"><?= $juriste['mail']?></td>
                                 <td scope="col"><?= $juriste['role']?></td>
