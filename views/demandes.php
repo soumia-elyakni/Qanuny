@@ -21,11 +21,7 @@ if(isset($_POST['refu'])){
   <section class=" d-flex align-items-center px-3 justify-content-between" style=" margin-top : 40px; direction:rtl;">
     <h2 class="text-info text-center mb-5" style="margin-top :100px;">لائحة الطلبات</h2>
 
-    <select name="statut" class="select mt-3 float-start" id="statut" style="width : 190px">
-      <option selected="selected">الكل</option>
-      <option value="عميل">الانتظار</option>
-      <option value="محام">مقبول</option>
-    </select>
+
   </section>
 
   <?php foreach ($demandes as $demande) : ?>
