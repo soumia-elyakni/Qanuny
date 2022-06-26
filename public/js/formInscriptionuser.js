@@ -158,7 +158,7 @@
                 usMail.style.borderColor = "red";
             } else if (!Mailregex.test(usMail.value)){
                 e.preventDefault()
-                mailMessage.textContent = "  املأ الفراغ بما يناسب ماشي باشما كان اسميتك";
+                mailMessage.textContent = " ادخل بريد الكتروني صحيح";
                 usMail.style.borderColor = "red";
             } else {
                 mailMessage.textContent = "";

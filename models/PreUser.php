@@ -38,12 +38,6 @@ class preUser{
 
         $stmt->execute();
         
-
-        // if($stmt->execute()){
-        //     return 'ok';
-        // } else {
-        //     return 'error';
-        // }
         
 }
 
