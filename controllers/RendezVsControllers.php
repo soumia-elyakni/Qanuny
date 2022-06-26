@@ -26,7 +26,9 @@ class RendezVsControllers {
             ];
 
             $result = RendezVs::add($data);
+            Redirect::to('mesDemandes');
             return $result;
+            
 
         
     }

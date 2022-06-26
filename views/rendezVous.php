@@ -14,7 +14,7 @@ $demandes = $RendezVs->rendezVs();
 <main style="position: absolute; z-index: 20; width: calc(100% - 270px); top: 62px; right : 270px; padding: 20px;">
 
 <section>
-<h2 class="text-center my-3">لائحة المواعيد</h2>
+<h2 class="text-center text-info my-3">لائحة المواعيد</h2>
 
 </section>
 

@@ -51,7 +51,7 @@
       </div>
     </div>
     <div class="col-md-3 p-3">
-      <h6 class="fs-2 text-center mb-5"><?= $demande['statut']?></h6>
+      <h6 class="fs-2 text-center text-info mb-5"><?= $demande['statut']?></h6>
       <p><?= $demande['dateRV']?></p>
       <p><?= $demande['lienRV']?></p>
       <p><?= $demande['document']?></p>
