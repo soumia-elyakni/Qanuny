@@ -15,11 +15,6 @@ class PreUserControllers {
 
 public function deletePreUser($id){
         $result = PreUser::delete($id);
-        if($result === 'ok')
-        {
-            Redirect::to('Tableau');
-            // header('location:Tableau');
-        }
 }
 
 }

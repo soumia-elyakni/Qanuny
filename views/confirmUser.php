@@ -9,7 +9,7 @@ if(isset($_POST['id'])) {
 
     if($juriste -> confirmJuriste($data)){
         $PreUser-> deletePreUser($id); 
-        Redirect::to('nouveauxJuriste');
+        Redirect::to('nouveauxJuristes');
     }
     
    
